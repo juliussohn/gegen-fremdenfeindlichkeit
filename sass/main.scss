@@ -1,0 +1,8 @@
+html, body{
+	margin: 0;
+	padding: 0;
+}
+@import "settings";
+@import "type";
+@import "components/wizard";
+@import "components/question";

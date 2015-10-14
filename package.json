@@ -1,0 +1,19 @@
+{
+  "name": "gegen-fremdenfeindlichkeit",
+  "namelower": "gegen-fremdenfeindlichkeit",
+  "version": "0.0.1",
+  "description": "An example AngularJS project",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git@git.example.com:example.git"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-sass": "^1.0.0",
+    "load-grunt-tasks": "^3.2.0"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}
