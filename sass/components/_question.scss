@@ -1,4 +1,4 @@
-question{
+.question{
 	.slider{
 		width: 100%;
 		position: absolute;
@@ -17,6 +17,11 @@ question{
 		}
 		.value{
 			color: white;
+			position: fixed;
+			right: 0;
+			&.bottom{
+				position: relative;
+			}
 		}
 	}
 	h1{
@@ -64,15 +69,75 @@ question{
 		}
 		.content{
 			
-			width: 800px;
 			margin: 0 auto;
-			margin-top: 10%;
+			margin-top: calc(50vh - 75px);
+			transform:translateY(-50%)
 
+		}
+		.chart{
+			canvas{
+				display: block;
+				margin: 0 auto;
+			}
+			height: 300px;
 		}
 		.result{
 			font-size: 70px;
 			margin-top: -20px;
+			margin-bottom: -10px;
 			display: block;
+			text-transform: uppercase;
+		}
+		.info{
+			position: absolute;
+			right: 50px;
+			bottom: 30px;
+			display: block;
+			color: white;
+			&:hover{
+				.info-icon{
+					transform: perspective(1px) scale(1.2);
+				}
+			}
+			.info-icon{
+				height: 30px;
+				width: 30px;
+				background-color: white;
+				border-radius: 100%;
+				color: $black;
+				text-align: center;
+				font-size: 20px;
+				float: left;
+				transition: all .2s;
+				&:after{
+					content: 'i';
+				}
+				
+			}
+			.info-text{
+				text-transform: uppercase;
+				line-height: 30px;
+				font-weight: 600;
+				float: left;
+				margin-right: 20px;
+				transition: all .3s;
+				&.ng-hide-add { 
+					opacity: 1;
+					margin-right: 20px;
+				 }
+				&.ng-hide-add.ng-hide-add-active { 
+					opacity: 0;
+					margin-right: 40px;
+				 }
+				&.ng-hide-remove { 
+					opacity: 0;
+					margin-right: 40px;
+				 }
+				&.ng-hide-remove.ng-hide-remove-active {
+					opacity: 1;
+					margin-right: 20px;
+				 }
+							}
 		}
 
 
@@ -82,42 +147,61 @@ question{
 		position: absolute;
 		bottom: 0;
 		width: 100%; 
+		text-transform: uppercase;
 		float: left;
 		&>div{
 			float: right;
 		}
-		.next{
+		.next-container{
 			float: right;
+			height: 100%;
+			overflow: hidden;
+			max-width: 0;
+			
+			transition: all 1s cubic-bezier(.17,.67,.22,.9);
+			transition-delay:1.6s;
+			&.clicked{
+				max-width: 200px;
+			}
+			&.clicked-add{
+				max-width: 0;
+			}	
+			&.clicked-add.clicked-add-active{
+				max-width: 200px;
+			}
+		}
+		.next{
+			background-color: white;
+			width: 80px;
 			display: block;
 			height: 100%;
-			background-color: white;
-			line-height: 150px;
-			padding: 0 30px;
+			background-color:255;
+			line-height: 170px;
 			color: $black;
 			text-decoration: none;
 			text-transform: uppercase;
 			font-size: 50px;
-			overflow: hidden;
-			transition: all 1s;
-			transition-delay:2s;
-			max-width: 700px;
-			&.ng-enter{
-				max-width: 0;
-				padding: 0;
-			}	
-			&.ng-enter-active{
-				max-width: 700px;
-				padding: 0 30px;
+			padding: 0 35px;
+			cursor: pointer;	
+			transition: all .3s cubic-bezier(.17,.67,.22,.9);;
+			&:hover{
+				text-indent: 10px;
+				//opacity: .2;
 			}
+			
 		}
 	}
 	.your-tip{
 		text-transform: uppercase;
 		 transition-delay: .4s;
-		&.ng-enter {
+		 opacity: 0;
+		 &.clicked{
+		 	opacity: 1;
+		 }
+		&.clicked-add {
 		  opacity: 0;
 		}
-		&.ng-enter.ng-enter-active {
+		&.clicked-add.clicked-add-active {
 		  opacity: 1;
 		}
 	}
@@ -127,6 +211,7 @@ question{
 		padding-right: 50px;
 		font-size: 60px;
 		color: $black;
+		text-emphasis: after;text-transform: uppercase;
 		&.background{
 			position: absolute;
 			bottom: 0;

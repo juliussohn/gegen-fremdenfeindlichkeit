@@ -1,0 +1,15 @@
+<div class="row">
+        <div class="col-35 chart">
+        <div >
+
+            <img src="img/calendar-grey.svg" style="width:100%;">
+            <div ng-if="q.showchart"  ng-style="{'color': q.color}" class="pi_number" style="transform:scale(2); margin-top:-50px; display:block;"><span count-to="{{q.result}}" duration="0.8" count-from="0"></span>
+            </div>
+         
+        </div>
+    </div>
+    <div class="col-65">
+        <span class="result"><span>{{q.result}}{{q.unit}}</span>
+        <p>beträgt der Zeitraum in denen Flüchtline nach ihrer Ankunft nicht Arbeiten dürfen.</p>
+    </div>
+</div>

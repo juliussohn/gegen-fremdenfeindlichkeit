@@ -1,11 +1,11 @@
 html, body{
 	margin: 0;
 	padding: 0;
-	
+
 }
 
 .row{
-	max-width:800px;
+	max-width:1000px;
 	margin: 0 auto;
 	width: 100%;
 	&:after{
@@ -25,14 +25,25 @@ html, body{
 		
 	}
 }
-.col-50{
-	width: 50%;
-
-}
+.col-25{ width: 25%;}
+.col-30{ width: 30%;}
+.col-33{ width: 33.333333%;}
+.col-35{ width: 35%;}
+.col-40{ width: 40%;}
+.col-50{ width: 50%;}
+.col-60{ width: 60%;}
+.col-65{ width: 65%;}
+.col-66{ width: 66.666666%;}
+.col-70{ width: 70%;}
+.col-100{ width: 100%;}
 
 @import "settings";
 @import "type";
 @import "components/wizard";
 @import "components/question";
 @import "components/graphs";
+@import "components/d3";
+@import "components/results";
+@import "components/start_page"; 
+
 

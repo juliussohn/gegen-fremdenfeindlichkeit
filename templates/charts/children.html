@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-50 chart">
+        <div ng-if="q.showchart"  >
+            <canvas  id="chart_children" width="300" height="300" ng-init="chart_children()"></canvas>
+            <div ng-style="{'color': q.color}" class="pi_number"><span count-to="{{q.result}}" duration="0.8" count-from="0"></span>{{q.unit}}
+</div>
+         
+        </div>
+    </div>
+    <div class="col-50">
+        <span class="result">{{q.result}}{{q.unit}}</span>
+        <p>der weltweit 60 millionen Flüchtlinge und Menschen in flüchtlingsähnlichen Situationen sind jünger als 18 Jahre.</p>
+    </div>
+</div>

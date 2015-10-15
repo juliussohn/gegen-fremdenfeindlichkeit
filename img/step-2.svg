@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-518.9 317.9 252.6 164.1" enable-background="new -518.9 317.9 252.6 164.1" xml:space="preserve">
+<title>Step 2</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1" sketch:type="MSPage">
+	<g id="Start" transform="translate(-605.000000, -458.000000)" sketch:type="MSArtboardGroup">
+		<g id="Schritt-2" transform="translate(605.000000, 458.000000)" sketch:type="MSLayerGroup">
+			<g id="Step-2" sketch:type="MSShapeGroup">
+				<path id="Shadow" fill-opacity="3.464674e-02" d="M-501,387h217c2.2,0,4,1.8,4,4v87c0,2.2-1.8,4-4,4h-217c-2.2,0-4-1.8-4-4v-87
+					C-505,388.8-503.2,387-501,387z"/>
+				<path id="Frame" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2" d="M-509,320h233c3.9,0,7,3.1,7,7v143c0,3.9-3.1,7-7,7h-233
+					c-3.9,0-7-3.1-7-7V327C-516,323.1-512.9,320-509,320z"/>
+				<path id="Rectangle-22" fill="#D8D8D8" d="M-505,437h225c2.8,0,5,2.2,5,5v24c0,2.8-2.2,5-5,5h-225c-2.8,0-5-2.2-5-5v-24
+					C-510,439.2-507.8,437-505,437z"/>
+				<path id="Rectangle-33" fill="#B4B4B4" d="M-380,447h89c2.2,0,4,1.8,4,4v6c0,2.2-1.8,4-4,4h-89c-2.2,0-4-1.8-4-4v-6
+					C-384,448.8-382.2,447-380,447z"/>
+				<g id="Text" transform="translate(134.000000, 31.000000)">
+					<path id="Rectangle-23-Copy-3" fill="#B4B4B4" d="M-514,320h30c1.1,0,2,0.9,2,2v4c0,1.1-0.9,2-2,2h-30c-1.1,0-2-0.9-2-2v-4
+						C-516,320.9-515.1,320-514,320z"/>
+					<path id="Rectangle-23" fill="#D8D8D8" d="M-514,340h50c1.1,0,2,0.9,2,2v4c0,1.1-0.9,2-2,2h-50c-1.1,0-2-0.9-2-2v-4
+						C-516,340.9-515.1,340-514,340z"/>
+					<path id="Rectangle-23-Copy" fill="#D8D8D8" d="M-514,353h59c1.1,0,2,0.9,2,2v4c0,1.1-0.9,2-2,2h-59c-1.1,0-2-0.9-2-2v-4
+						C-516,353.9-515.1,353-514,353z"/>
+					<path id="Rectangle-23-Copy-2" fill="#D8D8D8" d="M-514,366h38c1.1,0,2,0.9,2,2v4c0,1.1-0.9,2-2,2h-38c-1.1,0-2-0.9-2-2v-4
+						C-516,366.9-515.1,366-514,366z"/>
+				</g>
+				<g id="bar-chart" transform="translate(59.000000, 42.000000)">
+					<rect id="Rectangle-45" x="-508" y="320" fill="#D8D8D8" width="17" height="38"/>
+					<rect id="Rectangle-45-Copy" x="-485" y="339" fill="#D8D8D8" width="17" height="19"/>
+					<rect id="Rectangle-44" x="-516" y="361" fill="#D8D8D8" width="58" height="2"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

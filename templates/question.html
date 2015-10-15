@@ -1,12 +1,14 @@
-<div class="question color-{{color}}" >
-    <h1>{{question}}</h1>
-    <span class="value background">{{value}}{{unit}}</span>
-    <div class="slider" ng-class="{clicked: clicked}">
+<div class="question " >
+    <h1 ng-hide="showchart">{{question}}</h1>
+    <span ng-hide="showchart" class="value background">{{value}}{{unit}}</span>
+    <div ng-style="{'background-color':color}" class="slider" ng-class="{clicked: clicked}">
         <h1>{{question}}</h1>
         <div class="bottom-bar">
-        	<a wz-next class="next" ng-if="clicked">weiter</a>
-        	<div class="value">
-        		<span class="your-tip" ng-if="clicked">Dein Tipp war </span> 
+            <div class="next-container" ng-if="clicked">
+        	<a wz-next class="next" ><img src="img/next.svg"></a>
+            </div>
+        	<div class="value" ng-class="{'bottom':clicked}">
+        		<span class="your-tip" ng-class="{'clicked' :clicked}">Dein Tipp war </span> 
         		{{value}}{{unit}}{{template}}
         	</div>
         	
@@ -15,16 +17,12 @@
     	
     </div>
     <div class="answer" ng-class="{visible: clicked}">
-        <div class="content" >
-            <div class="row">
-                <div class="col-50" ng-include="charttemplate">
-                    
-                </div>
-                <div class="col-50">
-                    <span class="result">{{result}}{{unit}}</span>
-                    <p>{{description}}</p>
-                </div>
-            </div>
-       
+        <div class="content" ng-include="charttemplate">
+    
+      
     </div>
+     <a target="_blank" href="{{source}}" class="info" ng-mouseover="show_info = true" ng-mouseleave="show_info=false">
+        <div class="info-text" ng-show="show_info">{{sourcetitle}}</div>
+         <div class="info-icon"></div>
+     </a>
 </div>

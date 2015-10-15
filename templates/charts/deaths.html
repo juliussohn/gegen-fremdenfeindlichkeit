@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-50 chart">
+        <div ng-if="q.showchart" >
+            <canvas  id="chart_deaths" width="450" height="300" ng-init="chart_deaths()"></canvas>
+            <div class="row">
+            	 <div class="col-50 "><span class="deaths_year">2014</span></div>
+            	 <div class="col-50 "><span class="deaths_year">2015</span></div>
+            </div>
+            <style type="text/css">
+            	.deaths_year{
+            		font-size: 30px;
+            		display: block;
+            		margin-top: 20px;
+            		text-align: center;
+            			font-weight: 700;
+
+            	}
+            </style>
+</div>
+         
+        </div>
+    <div class="col-50">
+        <span class="result">{{q.result}}{{q.unit}}</span>
+        <p>Flüchtlinge ertranken 2015 bei dem Versuch über das Mittelmeer Europa zu erreichen. Das bedeutet, dass ca jeder 50ste auf der Flucht ums Leben kam. Die zahl hat sich im Vergleich zum Vorjahr verdreissigfacht.</p>
+    </div>
+</div>

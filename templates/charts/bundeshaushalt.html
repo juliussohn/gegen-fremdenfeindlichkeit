@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-35 chart"  >
+        <div ng-if="q.showchart" >
+            <canvas  id="chart_bundeshaushalt" width="300" height="300" ng-init="chart_bundeshaushalt()"></canvas>
+            <div ng-style="{'color': q.color}" style="margin-top:-20px;"class="pi_number">< 1%<div style="font-size:12px; text-transform:uppercase; margin-top:-20px;">des Bundeshaushaltes</div>
+</div>
+         
+        </div>
+    </div>
+    <div class="col-65">
+        <span class="result">{{q.result}}{{q.unit}}</span>
+        <p>wurden im Jahr 2015 für das Bundesamt für Migration und Flüchtlinge ausgegeben. Das sind weniger als 1% des Bundeshaushaltes.</p>
+    </div>
+</div>

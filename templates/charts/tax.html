@@ -1,0 +1,26 @@
+<div class="row" >
+    <div class="col-50 chart" >
+        <div   ng-if="q.showchart">
+            <canvas  id="chart_tax" width="450" height="300" ng-init="chart_tax()"></canvas>
+            <div class="row">
+            	 <div class="col-50 "><span class="tax_label">Ausgaben</span></div>
+            	 <div class="col-50 "><span class="tax_label">Einnahmen</span></div>
+            </div>
+            <style type="text/css">
+            	.tax_label{
+            		font-size: 30px;
+            		display: block;
+                        font-weight: 700;
+
+            		margin-top: 20px;
+            		text-align: center;
+            	}
+            </style>
+</div>
+         
+        </div>
+    <div class="col-50">
+        <span class="result">{{q.result}}{{q.unit}}</span>
+        <p>zahlt ein Asylant durchschnittlich im Jahr mehr an Steuern und Sozialabgaben als er an staatlichen Leistungen erhält.</p>
+    </div>
+</div>

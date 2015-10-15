@@ -1,4 +1,13 @@
- <div class="dots">
-    <div class="dot" ng-repeat="n in getNumber(143) track by $index" ng-if="showchart" >
+<div class="row">
+    <div class="col-50 chart" >
+
+        <div class="dots">
+            <div class="dot" ng-repeat="n in getNumber(143) track by $index" ng-if="q.showchart" >
+            </div>
+        </div>
+    </div>
+    <div class="col-50">
+        <span class="result"><span>{{q.result}}{{q.unit}}</span>
+        <p>Erhält ein Asylbewerber in Deutschen Erstaufnahmeeinrichtungen.</p>
     </div>
 </div>
