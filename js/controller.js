@@ -4,3 +4,4 @@ app.controller('appCtrl', function ($scope) {
     $scope.number = 5;
 
 });
+

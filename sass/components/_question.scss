@@ -26,13 +26,7 @@ question{
 			top: 30px;
 			position: absolute;
 	}
-	.value{
-		position: fixed;
-		bottom: 30px;
-		right: 50px;
-		font-size: 60px;
-		color: $black;
-	}
+	
 	&.clicked{
 		.slider{
 			height: 100vw;
@@ -83,6 +77,40 @@ question{
 
 
 	}
+	.bottom-bar{
+		height: 150px;
+		position: absolute;
+		bottom: 0;
+		width: 100%; 
+		float: left;
+		&>div{
+			float: right;
+		}
+		.next{
+			float: right;
+			display: block;
+			height: 100%;
+			background-color: white;
+			line-height: 150px;
+			padding: 0 30px;
+			color: $black;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 50px;
+			overflow: hidden;
+			transition: all 1s;
+			transition-delay:2s;
+			max-width: 700px;
+			&.ng-enter{
+				max-width: 0;
+				padding: 0;
+			}	
+			&.ng-enter-active{
+				max-width: 700px;
+				padding: 0 30px;
+			}
+		}
+	}
 	.your-tip{
 		text-transform: uppercase;
 		 transition-delay: .4s;
@@ -91,6 +119,18 @@ question{
 		}
 		&.ng-enter.ng-enter-active {
 		  opacity: 1;
+		}
+	}
+	.value{
+		line-height: 150px;
+		//padding-bottom: 30px;
+		padding-right: 50px;
+		font-size: 60px;
+		color: $black;
+		&.background{
+			position: absolute;
+			bottom: 0;
+			right: 0;
 		}
 	}
 

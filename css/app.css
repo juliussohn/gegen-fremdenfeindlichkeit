@@ -71,13 +71,6 @@ question h1 {
   top: 30px;
   position: absolute; }
 
-question .value {
-  position: fixed;
-  bottom: 30px;
-  right: 50px;
-  font-size: 60px;
-  color: #1e1e1e; }
-
 question.clicked .slider {
   height: 100vw;
   transition: all 0.5s;
@@ -115,6 +108,36 @@ question .answer {
     margin-top: -20px;
     display: block; }
 
+question .bottom-bar {
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  float: left; }
+  question .bottom-bar > div {
+    float: right; }
+  question .bottom-bar .next {
+    float: right;
+    display: block;
+    height: 100%;
+    background-color: white;
+    line-height: 150px;
+    padding: 0 30px;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 50px;
+    overflow: hidden;
+    transition: all 1s;
+    transition-delay: 2s;
+    max-width: 700px; }
+    question .bottom-bar .next.ng-enter {
+      max-width: 0;
+      padding: 0; }
+    question .bottom-bar .next.ng-enter-active {
+      max-width: 700px;
+      padding: 0 30px; }
+
 question .your-tip {
   text-transform: uppercase;
   transition-delay: .4s; }
@@ -122,6 +145,16 @@ question .your-tip {
     opacity: 0; }
   question .your-tip.ng-enter.ng-enter-active {
     opacity: 1; }
+
+question .value {
+  line-height: 150px;
+  padding-right: 50px;
+  font-size: 60px;
+  color: #1e1e1e; }
+  question .value.background {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
 
 question .color-1 .slider {
   background-color: #f39c11; }

@@ -22,10 +22,12 @@ app.directive('question', function () {
 
             function click(event) {
                 scope.clicked = true;
+                
                 $(document)
                     .unbind('mousemove', mousemove);
                 el.addClass("clicked");
-                scope.$apply()
+                scope.$apply();
+                setTimeout(function() { scope.showchart=true ; scope.$apply();}, 800);
             }
 
             function mousemove(event) {
