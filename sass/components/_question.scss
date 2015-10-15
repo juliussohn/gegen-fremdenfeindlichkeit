@@ -6,6 +6,7 @@ question{
 		background-color: $color-1;
 		z-index: 5;
 		overflow: hidden;
+		//cursor: url(../img/cursor.png) 30 30, auto;
 		&.clicked{
 			height: 100% !important;
 		}
@@ -27,9 +28,9 @@ question{
 	}
 	.value{
 		position: fixed;
-		bottom: 40px;
+		bottom: 30px;
 		right: 50px;
-		font-size: 100px;
+		font-size: 60px;
 		color: $black;
 	}
 	&.clicked{
@@ -41,31 +42,55 @@ question{
 	}
 	.answer{
 		background-color: $black;
+
 		position: absolute;
 		width:100%;
 		z-index: 8;
-		height: 100%;
+		height: calc(100% - 150px);
 		 transition:all .65s;
 		  transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
 		  transition-delay: .1s;
 		  color: white;
-		
-		&.ng-enter {
-		  /* standard transition code */
-		  
-		  top:100%;
-		}
-		&.ng-enter-stagger {
-		  /* this will have a 100ms delay between each successive leave animation */
-		  transition-delay: 2s;
+		  visibility: hidden;
+		// top:-150px;
 
-		  /* As of 1.4.4, this must always be set: it signals ngAnimate
-		    to not accidentally inherit a delay property from another CSS class */
-		  transition-duration: 0s;
+		&.visible-add {
+		  top:100%;
+		  height: 100%;
+		}
+
+		&.visible-add-active {
+		  top:0px;
+		  height: calc(100% - 150px);
+		}
+		&.visible {
+			visibility:visible;
+		  top:0px;
+		  height: calc(100% - 150px);
+		}
+		.content{
+			
+			width: 800px;
+			margin: 0 auto;
+			margin-top: 10%;
+
+		}
+		.result{
+			font-size: 70px;
+			margin-top: -20px;
+			display: block;
+		}
+
+
+	}
+	.your-tip{
+		text-transform: uppercase;
+		 transition-delay: .4s;
+		&.ng-enter {
+		  opacity: 0;
 		}
 		&.ng-enter.ng-enter-active {
-		  /* standard transition styles */
-		  top:0;
+		  opacity: 1;
 		}
 	}
 
@@ -85,3 +110,4 @@ question{
 		}
 	}
 }
+

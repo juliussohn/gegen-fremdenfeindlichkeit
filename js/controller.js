@@ -1,10 +1,6 @@
-var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate']);
+var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate','angular-centered']);
 app.controller('appCtrl', function ($scope) {
-	$scope.value=0;
-   $scope.setValue = function(event){
-   //	console.log(angular.element(event))
+    $scope.value = 0;
+    $scope.number = 5;
 
-   }
-    }
-
-);
+});

@@ -1,8 +1,38 @@
 html, body{
 	margin: 0;
 	padding: 0;
+	
 }
+
+.row{
+	max-width:800px;
+	margin: 0 auto;
+	width: 100%;
+	&:after{
+		 clear: both;
+		 content: " ";
+			display: table;
+	}
+}
+[class^="col-"]{
+	padding: 0 25px;
+	box-sizing:border-box;
+	float: left;
+	min-height: 10px;
+	position: relative;
+	&:last-child{
+		float: right;
+		
+	}
+}
+.col-50{
+	width: 50%;
+
+}
+
 @import "settings";
 @import "type";
 @import "components/wizard";
 @import "components/question";
+@import "components/graphs";
+

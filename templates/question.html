@@ -1,9 +1,24 @@
 <div class="question color-{{color}}" >
-<h1>{{question}}</h1>
-<span class="value">{{value}}{{unit}}</span>
-<div class="slider" ng-class="{clicked: clicked}">
-	<h1>{{question}}</h1>
-	<span class="value">{{value}}{{unit}}</span>
-</div>
-<div class="answer" ng-if="clicked == true"><a href="#" wz-next >Weiter</a></div>
+    <h1>{{question}}</h1>
+    <span class="value">{{value}}{{unit}}</span>
+    <div class="slider" ng-class="{clicked: clicked}">
+        <h1>{{question}}</h1>
+        <span class="value"><span class="your-tip" ng-if="clicked">Dein Tipp war </span> {{value}}{{unit}}{{template}}</span>
+    </div>
+    <div class="answer" ng-class="{visible: clicked}">
+        <div class="content" >
+            <div class="row">
+                <div class="col-50" ng-include="charttemplate">
+                    <div class="dots">
+                        <div class="dot" ng-repeat="n in getNumber(143) track by $index" ng-if="clicked" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-50">
+                    <span class="result">{{result}}{{unit}}</span>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+       
+    </div>
 </div>
