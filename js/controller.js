@@ -1,4 +1,4 @@
-var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'angular-centered', 'nvd3', 'countTo']);
+var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo']);
 app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
     $scope.value = 0;
     $scope.number = 5;
@@ -7,7 +7,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
     $scope.$on('valueSet', function (event, data) {
         $scope.values.push(data)
         if ($scope.values.length == 8) {
-            //	$scope.finished = true
+            //  $scope.finished = true
         }
         console.log($scope.values)
     }); 
@@ -20,97 +20,94 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         }
     }
     $scope.questions = [    {    
-            min: 0,
-                max: 4000,
-                result: 3300,
-                unit: " EUR",
-                question: "Wie viel verdient Deutschland jährlich an einem Asylant?",
-                color: "#7e8c8d",
-                charttemplate: "templates/charts/tax.html",
-                source: "http://www.badische-zeitung.de/fakten-check-deutschland-geht-es-immer-schlechter",
-            value: 1345,
-                sourcetitle: "Badische Zeitung – Dezember 2014"    
-        }
-        , {    
-                min: 0,
-                    max: 100,
-                    result: 45,
-                    unit: " %",
-                    question: "Wie viele Asynanträge blieben in Deutschland 2015 unbearbeitet?",
-                    color: "#16a086",
-                    charttemplate: "templates/charts/unfinished.html",
-                    source: "http://www.rp-online.de/politik/deutschland/asylantraege-unbearbeitet-bundesamt-fuer-fluechtlinge-im-rueckstand-aid-1.5381979",
-                	value:40,
-                    sourcetitle: "RP Online – September 2015"    
-            }, {    
-                min: 0,
-                    max: 6,
-                    result: 3,
-                    unit: " Monate",
-                    question: "Wie lange dürfen Flüchtlinge nach ihrer Ankunft nicht Arbeiten?",
-                    color: "#576474",
-                    charttemplate: "templates/charts/work.html",
-                    source: "http://www.proasyl.de/de/themen/basics/basiswissen/rechte-der-fluechtlinge/",
-                	value:2,
-                    sourcetitle: "Proasyl – Oktober 2015"    
-            }, {    
-                min: 100,
-                    max: 600,
-                    result: 243,
-                    unit: " Mio EUR",
-                    question: "Wie viel Geld vom Bundeshaushalt wurde 2015 für das Bundesamt für Migration und Flüchtlinge ausgegeben?",
-                	color: "#eb6f63",
-                    charttemplate: "templates/charts/bundeshaushalt.html",
-                    source: "http://www.bundeshaushalt-info.de/#/2015/soll/ausgaben/einzelplan.html",
-                	value:500,
-                    sourcetitle: "Bundeshaushalt – Oktober 2015"    
-            }, {    
-                min: 0,
-                    max: 1000,
-                    result: 143,
-                    unit: " EUR",
-                    question: "Wie viel Geld bekommt ein Asylbewerberm monatlich in der Erstaufnahmeinrichtung?",
-                	color: "#f39c11",
-                    charttemplate: "templates/charts/money.html",
-                    source: "http://www.spiegel.de/politik/deutschland/fluechtlinge-in-deutschland-antworten-zum-taschengeld-a-1048432.html",
-                	value:567,
-                    sourcetitle: "Spiegel – August 2015"    
-            }, {    
-                	min: 0,
-                    max: 12,
-                    result: 12,
-                    unit: " Monate",
-                    question: "Wie lange dauert die durchschnittliche Bearbeitungsdauer für einen Sylantrag in Deutschland?",
-                	color: "#52BE80",
-                    charttemplate: "templates/charts/application_duration.html",
-                    source: "http://www.welt.de/politik/deutschland/article145595071/So-wird-die-Dauer-von-Asylverfahren-verschleiert.html",
-                	value:5,
-                    sourcetitle: "Die Welt – August 2015"    
-            }, {    
-                min: 0,
-                    max: 2000,
-                    result: 2000,
-                    unit: " Tote",
-                    question: "Wie viele Flüchtlinge starben 2015 bei der Flucht über das Mittelmeer?",
-                	color: "#2980B9",
-                    charttemplate: "templates/charts/deaths.html",
-                    source: "http://www.tagesspiegel.de/politik/ertrunkene-fluechtlinge-2015-schon-30-mal-mehr-tote-im-mittelmeer-als-im-vorjahreszeitraum/11664838.html",
-                	value:345,
-                    sourcetitle: "tagessschau.de – August 2015"    
-            }, {    
-                	min: 0,
-                    max: 100,
-                    result: 51,
-                    unit: " %",
-                    question: "Wie viel Prozent der Flüchtlinge weltweit sind Kinder?",
-                	color: "#A468BD",
-                    charttemplate: "templates/charts/children.html",
-                    source: "https://www.uno-fluechtlingshilfe.de/fluechtlinge/themen/fluechtlingskinder.html",
-                	value:40,
-                    sourcetitle: "Uno Flüchtlingshilfe – Oktober 2015"    
-            },    
-         
-    ];
+        min: 0,
+            max: 100,
+            result: 51,
+            unit: " %",
+            question: "Wie viel Prozent der Flüchtlinge weltweit sind jünger als 18 Jahre?",
+        color: "#A468BD",
+            charttemplate: "templates/charts/children.html",
+            source: "https://www.uno-fluechtlingshilfe.de/fluechtlinge/themen/fluechtlingskinder.html",
+        value: 40,
+            sourcetitle: "Uno Flüchtlingshilfe – Oktober 2015"    
+    },     {    
+        min: 0,
+            max: 12,
+            result: 12,
+            unit: " Monate",
+            question: "Wie lang ist die durchschnittliche Bearbeitungsdauer für einen Asylantrag in Deutschland?",
+        color: "#52BE80",
+            charttemplate: "templates/charts/application_duration.html",
+            source: "http://www.welt.de/politik/deutschland/article145595071/So-wird-die-Dauer-von-Asylverfahren-verschleiert.html",
+        value: 5,
+            sourcetitle: "Die Welt – August 2015"    
+    }, {    
+        min: 0,
+            max: 100,
+            result: 45,
+            unit: " %",
+            question: "Wie viele Asylanträge blieben in Deutschland 2015 unbearbeitet?",
+            color: "#16a086",
+            charttemplate: "templates/charts/unfinished.html",
+            source: "http://www.rp-online.de/politik/deutschland/asylantraege-unbearbeitet-bundesamt-fuer-fluechtlinge-im-rueckstand-aid-1.5381979",
+        value: 40,
+            sourcetitle: "RP Online – September 2015"    
+    }, {    
+        min: 0,
+            max: 6,
+            result: 3,
+            unit: " Monate",
+            question: "Wie lange dürfen Flüchtlinge nach ihrer Ankunft nicht Arbeiten?",
+            color: "#576474",
+            charttemplate: "templates/charts/work.html",
+            source: "http://www.proasyl.de/de/themen/basics/basiswissen/rechte-der-fluechtlinge/",
+        value: 2,
+            sourcetitle: "Proasyl – Oktober 2015"    
+    }, {    
+        min: 0,
+            max: 4000,
+            result: 3300,
+            unit: " EUR",
+            question: "Wie viel verdient Deutschland jährlich an einem Asylant?",
+            color: "#7e8c8d",
+            charttemplate: "templates/charts/tax.html",
+            source: "http://www.badische-zeitung.de/fakten-check-deutschland-geht-es-immer-schlechter",
+        value: 1345,
+            sourcetitle: "Badische Zeitung – Dezember 2014"    
+    }, {    
+        min: 100,
+            max: 600,
+            result: 243,
+            unit: " Mio EUR",
+            question: "Wie viel Geld vom Bundeshaushalt wurde 2015 für das Bundesamt für Migration und Flüchtlinge ausgegeben?",
+            color: "#eb6f63",
+            charttemplate: "templates/charts/bundeshaushalt.html",
+            source: "http://www.bundeshaushalt-info.de/#/2015/soll/ausgaben/einzelplan.html",
+            value: 500,
+            sourcetitle: "Bundeshaushalt – Oktober 2015"    
+    }, {    
+        min: 0,
+            max: 1000,
+            result: 143,
+            unit: " EUR",
+            question: "Wie viel Geld bekommt ein Asylbewerber monatlich in einer Erstaufnahmeinrichtung?",
+        color: "#f39c11",
+            charttemplate: "templates/charts/money.html",
+            source: "http://www.spiegel.de/politik/deutschland/fluechtlinge-in-deutschland-antworten-zum-taschengeld-a-1048432.html",
+        value: 567,
+            sourcetitle: "Spiegel – August 2015"    
+    }, {    
+        min: 0,
+            max: 2000,
+            result: 2000,
+            unit: " Tote",
+            question: "Wie viele Flüchtlinge starben 2015 bei der Flucht über das Mittelmeer?",
+        color: "#2980B9",
+            charttemplate: "templates/charts/deaths.html",
+            source: "http://www.tagesspiegel.de/politik/ertrunkene-fluechtlinge-2015-schon-30-mal-mehr-tote-im-mittelmeer-als-im-vorjahreszeitraum/11664838.html",
+        value: 345,
+            sourcetitle: "tagessschau.de – August 2015"    
+    } ];
     $scope.getNumber = function (num) {
         return new Array(num);
     }
@@ -307,35 +304,36 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
             showTooltips: false,
             barDatasetSpacing: 10,
             showScale: false,
-            responsive:false,
-             maintainAspectRatio: false,
+            responsive: false,
+            maintainAspectRatio: false,
         }
-         setTimeout(function () {
-                    
-              
-        var canvas = $(".result_chart");
-        console.log(index);
-        var color = $scope.questions[index].color;
-        var ctx = canvas.get(index).getContext("2d");
-        var data = {
-            labels: [''],
-            datasets: [{
-                fillColor: "#ffffff",
-                strokeColor: false,
-                highlightFill: color,
-                highlightStroke: false,
-                data: [$scope.questions[index].value]
-            }, {
-                fillColor: "#2980B9",
-                strokeColor: false,
-                highlightFill: color,
-                highlightStroke: false,
-                data: [$scope.questions[index].result]
-            }],
-        };
-
-        chart = new Chart(ctx)
-            .Bar(data, options);
-              }, 800);
+        setTimeout(function () {
+            var canvas = $(".result_chart");
+            console.log(index);
+            var color = $scope.questions[index].color;
+            var ctx = canvas.get(index)
+                .getContext("2d");
+            var data = {
+                labels: [''],
+                datasets: [{
+                    fillColor: "#ffffff",
+                    strokeColor: false,
+                    highlightFill: color,
+                    highlightStroke: false,
+                    data: [$scope.questions[index].value]
+                }, {
+                    fillColor: "#2980B9",
+                    strokeColor: false,
+                    highlightFill: color,
+                    highlightStroke: false,
+                    data: [$scope.questions[index].result]
+                }],
+            };
+            chart = new Chart(ctx)
+                .Bar(data, options);
+        }, 800);
+    }
+    $scope.refresh = function(){
+        location.reload();
     }
 });

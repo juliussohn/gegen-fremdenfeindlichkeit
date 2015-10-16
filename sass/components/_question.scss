@@ -3,12 +3,15 @@
 		width: 100%;
 		position: absolute;
 		bottom: 0;
-		background-color: $color-1;
+		background-color: $color-1; 
 		z-index: 5;
 		overflow: hidden;
+
 		//cursor: url(../img/cursor.png) 30 30, auto;
 		&.clicked{
 			height: 100% !important;
+			transition:all .5s;
+			 transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
 		}
 
 		h1{
@@ -35,8 +38,7 @@
 	&.clicked{
 		.slider{
 			height: 100vw;
-			transition:all .5s;
-			 transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
+			
 		}
 	}
 	.answer{
