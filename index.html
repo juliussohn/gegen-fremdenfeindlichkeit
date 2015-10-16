@@ -48,7 +48,8 @@
             </div>
             </wz-step>
          <wz-step wz-title="q_{{$index}}" ng-repeat="q in questions" ng-init="gotoStart()" ng-mousemove="q.clicked || changeValue($event, $index)" ng-click="setValue($event, $index)">
-            <div class="question" >
+
+            <div class="question" ng-class="{'showcursor' : !q.clicked}">
             <h1 ng-hide="q.showchart">{{q.question}}</h1>
             <span ng-hide="q.showchart" class="value background">{{q.value}}{{q.unit}}</span>
             <div ng-style="{'background-color':q.color, 'height':q.slider_height}" class="slider" ng-class="{clicked: q.clicked}">

@@ -1,4 +1,7 @@
 .question{
+	&.showcursor{
+		cursor: url(../img/cursor.png) 30 30, auto;
+	}
 	.slider{
 		width: 100%;
 		position: absolute;
@@ -7,7 +10,6 @@
 		z-index: 5;
 		overflow: hidden;
 
-		//cursor: url(../img/cursor.png) 30 30, auto;
 		&.clicked{
 			height: 100% !important;
 			transition:all .5s;

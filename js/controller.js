@@ -120,7 +120,8 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         }, 800);
     }
     $scope.changeValue = function ($event, i) {
-        var question = $scope.questions[i]
+        var question = $scope.questions[i];
+        
         wh = $(window)
             .height()
         y = wh - $event.pageY;

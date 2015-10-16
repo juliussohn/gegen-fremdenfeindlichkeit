@@ -134,6 +134,9 @@ $step_animtaion_duration: .5s;
     opacity: 1;
 }
 */
+.question.showcursor {
+  cursor: url(../img/cursor.png) 30 30, auto; }
+
 .question .slider {
   width: 100%;
   position: absolute;
@@ -941,7 +944,7 @@ Interactive Layer
   .results .refresh {
     display: block;
     position: absolute;
-    bottom: 20px;
+    bottom: 3%;
     left: 50%;
     margin-left: -25px;
     color: white;
@@ -1016,9 +1019,13 @@ Interactive Layer
 .startpage {
   background-color: white;
   z-index: 99;
-  position: relative;
-  height: 100vh;
+  position: fixed;
   width: 100vw; }
+  .startpage .content {
+    margin-top: calc(50vh - 95px);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
   .startpage .row {
     max-width: 800px; }
   .startpage h1 {
@@ -1031,7 +1038,7 @@ Interactive Layer
     height: 90px;
     overflow: hidden;
     margin-bottom: 40px;
-    margin-top: 40px; }
+    margin-top: 0px; }
     .startpage h1 + p {
       padding: 0 50px; }
   .startpage p {
@@ -1042,13 +1049,14 @@ Interactive Layer
     font-size: 18px;
     font-weight: 500;
     text-align: center;
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-bottom: 0; }
   .startpage .startbutton {
     cursor: pointer;
     height: 150px;
     background-color: #1e1e1e;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     text-align: center;
     font-size: 40px;
