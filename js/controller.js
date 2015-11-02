@@ -93,7 +93,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, deviceDet
             max: 4000,
             result: 3300,
             unit: " EUR",
-            question: "Wie viel verdient Deutschland jährlich an einem Asylant?",
+            question: "Wie viel Steuern verdient Deutschland jährlich mehr an einem Asylanten, als es für jenen ausgibt?",
             color: "#7e8c8d",
             charttemplate: "templates/charts/tax.html",
             source: "http://www.badische-zeitung.de/fakten-check-deutschland-geht-es-immer-schlechter",
