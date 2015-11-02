@@ -1,5 +1,5 @@
-var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo', 'ng.deviceDetector']);
-app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, deviceDetector) {
+var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo']);
+app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
     $scope.value = 0;
     $scope.number = 5;
     $scope.i = 0;
