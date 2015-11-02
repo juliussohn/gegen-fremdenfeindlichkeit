@@ -9,11 +9,9 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         if ($scope.values.length == 8) {
             //  $scope.finished = true
         }
-        console.log($scope.values);
     }); 
     $scope.init = function () {
         $scope.browser = $scope.getBrowser();
-        console.log( $scope.browser);
         if( ($scope.browser[0] == "Safari" && $scope.browser[1] > 8 ) ||($scope.browser[0] == "Chrome" && $scope.browser[1] > 40 ) ){
             $scope.changeBrowser = false;
         }else{
@@ -137,7 +135,6 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         WizardHandler.wizard()
             .goTo(i);
         $scope.questionNumber = parseInt(i.substr(2));
-        console.log($scope.questionNumber);
         if (i == "q_0") {
             $scope.started = true;
         }
@@ -357,7 +354,6 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         };
         setTimeout(function () {
             var canvas = $(".result_chart");
-            console.log(index);
             var color = $scope.questions[index].color;
             var ctx = canvas.get(index)
                 .getContext("2d");
