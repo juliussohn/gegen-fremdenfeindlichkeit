@@ -1,5 +1,5 @@
-var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo']);
-app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
+var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo', 'ng.deviceDetector']);
+app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, deviceDetector) {
     $scope.value = 0;
     $scope.number = 5;
     $scope.i = 0;
@@ -11,17 +11,39 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         }
         console.log($scope.values);
     }); 
+    $scope.init = function () {
+        $scope.browser = $scope.getBrowser();
+        console.log( $scope.browser);
+        if( ($scope.browser[0] == "Safari" && $scope.browser[1] > 8 ) ||($scope.browser[0] == "Chrome" && $scope.browser[1] > 40 ) ){
+            $scope.changeBrowser = false;
+        }else{
+            $scope.changeBrowser = true;
+        }
 
-    $scope.toStep = function (i) {
-        WizardHandler.wizard()
-            .goTo(i);
-        if (i == "q_0") {
-            $scope.started = true;
-        }
-        if (i == "q_8") {
-            $scope.showresults = true;
-        }
+
+        
     };
+
+    $scope.getBrowser = function () {
+        var ua = navigator.userAgent,
+            tem,
+            M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if (/trident/i.test(M[1])) {
+            tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+            return 'IE ' + (tem[1] || '');
+        }
+        if (M[1] === 'Chrome') {
+            tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+            if (tem != null) return tem.slice(1)
+                .join(' ')
+                .replace('OPR', 'Opera');
+        }
+        M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+        if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+        M[1]=parseInt(M[1]);
+        return M;
+    };
+
     $scope.questions = [    {    
         min: 0,
             max: 100,
@@ -83,10 +105,10 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
             result: 243,
             unit: " Mio EUR",
             question: "Wie viel Geld vom Bundeshaushalt wurde 2015 für das Bundesamt für Migration und Flüchtlinge ausgegeben?",
-            color: "#eb6f63",
+        color: "#eb6f63",
             charttemplate: "templates/charts/bundeshaushalt.html",
             source: "http://www.bundeshaushalt-info.de/#/2015/soll/ausgaben/einzelplan.html",
-            value: 500,
+        value: 500,
             sourcetitle: "Bundeshaushalt – Oktober 2015"    
     }, {    
         min: 0,
@@ -111,6 +133,18 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         value: 345,
             sourcetitle: "tagessschau.de – August 2015"    
     } ];
+    $scope.toStep = function (i) {
+        WizardHandler.wizard()
+            .goTo(i);
+        $scope.questionNumber = parseInt(i.substr(2));
+        console.log($scope.questionNumber);
+        if (i == "q_0") {
+            $scope.started = true;
+        }
+        if (i == "q_8") {
+            $scope.showresults = true;
+        }
+    };
     $scope.getNumber = function (num) {
         return new Array(num);
     };
@@ -122,16 +156,19 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
             $scope.$apply();
         }, 800);
     };
-    $scope.cursorMousedown = function($event){
-        $($event.currentTarget).addClass("mousedown");
+    $scope.cursorMousedown = function ($event) {
+        $($event.currentTarget)
+            .addClass("mousedown");
     };
     $scope.changeValue = function ($event, i) {
-
         var question = $scope.questions[i];
-        $($event.currentTarget).find(".cursor").css({
-            top:($event.pageY-30)+"px",
-            left:($event.pageX-30)+"px",
-        }).removeClass("mouseNotMoved");
+        $($event.currentTarget)
+            .find(".cursor")
+            .css({
+                top: ($event.pageY - 30) + "px",
+                left: ($event.pageX - 30) + "px",
+            })
+            .removeClass("mouseNotMoved");
         wh = $(window)
             .height();
         y = wh - $event.pageY;
@@ -344,7 +381,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
                 .Bar(data, options);
         }, 800);
     };
-    $scope.refresh = function(){
+    $scope.refresh = function () {
         location.reload();
     };
 });
