@@ -78,8 +78,8 @@ p {
 
 section.step {
   height: 100vh;
-  -webkit-transition: all 0.5s;
-          transition: all 0.5s; }
+  -webkit-transition: all .5s;
+          transition: all .5s; }
   section.step.ng-hide-add {
     margin-left: 0; }
   section.step.ng-hide-add.ng-hide-add-active {
@@ -134,203 +134,197 @@ $step_animtaion_duration: .5s;
     opacity: 1;
 }
 */
-.question.showcursor {
-  cursor: url(../img/cursor.png) 30 30, auto; }
-
-.question .slider {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: #f39c11;
-  z-index: 5;
-  overflow: hidden; }
-  .question .slider.clicked {
-    height: 100% !important;
-    -webkit-transition: all 0.5s;
-            transition: all 0.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-            transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-    /* easeOutSine */ }
-  .question .slider h1 {
-    position: fixed;
-    color: white; }
-  .question .slider .value {
-    color: white;
-    position: fixed;
-    right: 0; }
-    .question .slider .value.bottom {
-      position: relative; }
-
-.question h1 {
-  z-index: 2;
-  max-width: 600px;
-  left: 50px;
-  top: 30px;
-  position: absolute; }
-
-.question.clicked .slider {
-  height: 100vw; }
-
-.question .answer {
-  background-color: #1e1e1e;
-  position: absolute;
-  width: 100%;
-  z-index: 8;
-  height: calc(100% - 150px);
-  -webkit-transition: all 0.65s;
-          transition: all 0.65s;
-  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-          transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-  /* easeOutSine */
-  -webkit-transition-delay: .1s;
-          transition-delay: .1s;
-  color: white;
-  visibility: hidden; }
-  .question .answer.visible-add {
-    top: 100%;
-    height: 100%; }
-  .question .answer.visible-add-active {
-    top: 0px;
-    height: calc(100% - 150px); }
-  .question .answer.visible {
-    visibility: visible;
-    top: 0px;
-    height: calc(100% - 150px); }
-  .question .answer .content {
-    margin: 0 auto;
-    margin-top: calc(50vh - 75px);
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
-  .question .answer .chart {
-    height: 300px; }
-    .question .answer .chart canvas {
-      display: block;
-      margin: 0 auto; }
-  .question .answer .result {
-    font-size: 70px;
-    margin-top: -20px;
-    margin-bottom: -10px;
-    display: block;
-    text-transform: uppercase; }
-  .question .answer .info {
-    position: absolute;
-    right: 50px;
-    bottom: 30px;
-    display: block;
-    color: white; }
-    .question .answer .info:hover .info-icon {
-      -webkit-transform: perspective(1px) scale(1.2);
-              transform: perspective(1px) scale(1.2); }
-    .question .answer .info .info-icon {
-      height: 30px;
-      width: 30px;
-      background-color: white;
-      border-radius: 100%;
-      color: #1e1e1e;
-      text-align: center;
-      font-size: 20px;
-      float: left;
-      -webkit-transition: all 0.2s;
-              transition: all 0.2s; }
-      .question .answer .info .info-icon:after {
-        content: 'i'; }
-    .question .answer .info .info-text {
-      text-transform: uppercase;
-      line-height: 30px;
-      font-weight: 600;
-      float: left;
-      margin-right: 20px;
-      -webkit-transition: all 0.3s;
-              transition: all 0.3s; }
-      .question .answer .info .info-text.ng-hide-add {
-        opacity: 1;
-        margin-right: 20px; }
-      .question .answer .info .info-text.ng-hide-add.ng-hide-add-active {
-        opacity: 0;
-        margin-right: 40px; }
-      .question .answer .info .info-text.ng-hide-remove {
-        opacity: 0;
-        margin-right: 40px; }
-      .question .answer .info .info-text.ng-hide-remove.ng-hide-remove-active {
-        opacity: 1;
-        margin-right: 20px; }
-
-.question .bottom-bar {
-  height: 150px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-transform: uppercase;
-  float: left; }
-  .question .bottom-bar > div {
-    float: right; }
-  .question .bottom-bar .next-container {
-    float: right;
-    height: 100%;
-    overflow: hidden;
-    max-width: 0;
-    -webkit-transition: all 1s cubic-bezier(0.17, 0.67, 0.22, 0.9);
-            transition: all 1s cubic-bezier(0.17, 0.67, 0.22, 0.9);
-    -webkit-transition-delay: 1.6s;
-            transition-delay: 1.6s; }
-    .question .bottom-bar .next-container.clicked {
-      max-width: 200px; }
-    .question .bottom-bar .next-container.clicked-add {
-      max-width: 0; }
-    .question .bottom-bar .next-container.clicked-add.clicked-add-active {
-      max-width: 200px; }
-  .question .bottom-bar .next {
-    background-color: white;
-    width: 80px;
-    display: block;
-    height: 100%;
-    background-color: 255;
-    line-height: 170px;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 50px;
-    padding: 0 35px;
-    cursor: pointer;
-    -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.22, 0.9);
-            transition: all 0.3s cubic-bezier(0.17, 0.67, 0.22, 0.9); }
-    .question .bottom-bar .next:hover {
-      text-indent: 10px; }
-
-.question .your-tip {
-  text-transform: uppercase;
-  -webkit-transition-delay: .4s;
-          transition-delay: .4s;
-  opacity: 0; }
-  .question .your-tip.clicked {
-    opacity: 1; }
-  .question .your-tip.clicked-add {
-    opacity: 0; }
-  .question .your-tip.clicked-add.clicked-add-active {
-    opacity: 1; }
-
-.question .value {
-  line-height: 150px;
-  padding-right: 50px;
-  font-size: 60px;
-  color: #1e1e1e;
-  -webkit-text-emphasis: after;
-          text-emphasis: after;
-  text-transform: uppercase; }
-  .question .value.background {
+.question {
+  height: 100vh; }
+  .question.showcursor {
+    cursor: none; }
+  .question .slider {
+    width: 100%;
     position: absolute;
     bottom: 0;
-    right: 0; }
-
-.question .color-1 .slider {
-  background-color: #f39c11; }
-
-.question .color-2 .slider {
-  background-color: #eb6f63; }
-
-.question .color-3 .slider {
-  background-color: #2a80b9; }
+    background-color: #f39c11;
+    z-index: 5;
+    overflow: hidden; }
+    .question .slider.clicked {
+      height: 100% !important;
+      -webkit-transition: all .5s;
+              transition: all .5s;
+      -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+              transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+      /* easeOutSine */ }
+    .question .slider h1 {
+      position: fixed;
+      color: white; }
+    .question .slider .value {
+      color: white;
+      position: fixed;
+      right: 0; }
+      .question .slider .value.bottom {
+        position: relative; }
+  .question h1 {
+    z-index: 2;
+    max-width: 600px;
+    left: 50px;
+    top: 30px;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+  .question.clicked .slider {
+    height: 100vw; }
+  .question .answer {
+    background-color: #1e1e1e;
+    position: absolute;
+    width: 100%;
+    z-index: 8;
+    height: calc(100% - 150px);
+    -webkit-transition: all .65s;
+            transition: all .65s;
+    -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    /* easeOutSine */
+    -webkit-transition-delay: .1s;
+            transition-delay: .1s;
+    color: white;
+    visibility: hidden; }
+    .question .answer.visible-add {
+      top: 100%;
+      height: 100%; }
+    .question .answer.visible-add-active {
+      top: 0px;
+      height: calc(100% - 150px); }
+    .question .answer.visible {
+      visibility: visible;
+      top: 0px;
+      height: calc(100% - 150px); }
+    .question .answer .content {
+      margin: 0 auto;
+      margin-top: calc(50vh - 75px);
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    .question .answer .chart {
+      height: 300px; }
+      .question .answer .chart canvas {
+        display: block;
+        margin: 0 auto; }
+    .question .answer .result {
+      font-size: 70px;
+      margin-top: -20px;
+      margin-bottom: -10px;
+      display: block;
+      text-transform: uppercase; }
+    .question .answer .info {
+      position: absolute;
+      right: 50px;
+      bottom: 30px;
+      display: block;
+      color: white; }
+      .question .answer .info:hover .info-icon {
+        -webkit-transform: perspective(1px) scale(1.2);
+                transform: perspective(1px) scale(1.2); }
+      .question .answer .info .info-icon {
+        height: 30px;
+        width: 30px;
+        background-color: white;
+        border-radius: 100%;
+        color: #1e1e1e;
+        text-align: center;
+        font-size: 20px;
+        float: left;
+        -webkit-transition: all .2s;
+                transition: all .2s; }
+        .question .answer .info .info-icon:after {
+          content: 'i'; }
+      .question .answer .info .info-text {
+        text-transform: uppercase;
+        line-height: 30px;
+        font-weight: 600;
+        float: left;
+        margin-right: 20px;
+        -webkit-transition: all .3s;
+                transition: all .3s; }
+        .question .answer .info .info-text.ng-hide-add {
+          opacity: 1;
+          margin-right: 20px; }
+        .question .answer .info .info-text.ng-hide-add.ng-hide-add-active {
+          opacity: 0;
+          margin-right: 40px; }
+        .question .answer .info .info-text.ng-hide-remove {
+          opacity: 0;
+          margin-right: 40px; }
+        .question .answer .info .info-text.ng-hide-remove.ng-hide-remove-active {
+          opacity: 1;
+          margin-right: 20px; }
+  .question .bottom-bar {
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-transform: uppercase;
+    float: left; }
+    .question .bottom-bar > div {
+      float: right; }
+    .question .bottom-bar .next-container {
+      float: right;
+      height: 100%;
+      overflow: hidden;
+      max-width: 0;
+      -webkit-transition: all 1s cubic-bezier(0.17, 0.67, 0.22, 0.9);
+              transition: all 1s cubic-bezier(0.17, 0.67, 0.22, 0.9);
+      -webkit-transition-delay: 1.6s;
+              transition-delay: 1.6s; }
+      .question .bottom-bar .next-container.clicked {
+        max-width: 200px; }
+      .question .bottom-bar .next-container.clicked-add {
+        max-width: 0; }
+      .question .bottom-bar .next-container.clicked-add.clicked-add-active {
+        max-width: 200px; }
+    .question .bottom-bar .next {
+      background-color: white;
+      width: 80px;
+      display: block;
+      height: 100%;
+      background-color: 255;
+      line-height: 170px;
+      color: #1e1e1e;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 50px;
+      padding: 0 35px;
+      cursor: pointer;
+      -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.22, 0.9);
+              transition: all 0.3s cubic-bezier(0.17, 0.67, 0.22, 0.9); }
+      .question .bottom-bar .next:hover {
+        text-indent: 10px; }
+  .question .your-tip {
+    text-transform: uppercase;
+    -webkit-transition-delay: .4s;
+            transition-delay: .4s;
+    opacity: 0; }
+    .question .your-tip.clicked {
+      opacity: 1; }
+    .question .your-tip.clicked-add {
+      opacity: 0; }
+    .question .your-tip.clicked-add.clicked-add-active {
+      opacity: 1; }
+  .question .value {
+    line-height: 150px;
+    padding-right: 50px;
+    font-size: 60px;
+    color: #1e1e1e;
+    -webkit-text-emphasis: after;
+            text-emphasis: after;
+    text-transform: uppercase; }
+    .question .value.background {
+      position: absolute;
+      bottom: 0;
+      right: 0; }
+  .question .color-1 .slider {
+    background-color: #f39c11; }
+  .question .color-2 .slider {
+    background-color: #eb6f63; }
+  .question .color-3 .slider {
+    background-color: #2a80b9; }
 
 .dots .dot {
   height: 16px;
@@ -966,8 +960,8 @@ Interactive Layer
       border-radius: 100%;
       text-align: center;
       line-height: 45px;
-      -webkit-transition: all 0.2s;
-              transition: all 0.2s; }
+      -webkit-transition: all .2s;
+              transition: all .2s; }
       .results .refresh .circle img {
         height: 20px; }
     .results .refresh .text {
@@ -975,8 +969,8 @@ Interactive Layer
       position: absolute;
       left: 70px;
       top: 5px;
-      -webkit-transition: all 0.2s;
-              transition: all 0.2s; }
+      -webkit-transition: all .2s;
+              transition: all .2s; }
   .results .col-25 {
     padding: 0 5px;
     margin-bottom: 10px; }
@@ -1063,14 +1057,55 @@ Interactive Layer
     color: white;
     text-transform: uppercase;
     line-height: 150px;
-    -webkit-transition: all 0.3s;
-            transition: all 0.3s; }
+    -webkit-transition: all .3s;
+            transition: all .3s; }
+    .startpage .startbutton.ng-hide-add {
+      opacity: 1; }
+    .startpage .startbutton.ng-hide-add-active {
+      opacity: 0; }
     .startpage .startbutton img {
       height: 30px;
       margin-left: 20px;
-      -webkit-transition: all 0.3s;
-              transition: all 0.3s; }
+      -webkit-transition: all .3s;
+              transition: all .3s; }
     .startpage .startbutton:hover img {
       -webkit-transform: translateX(15px);
           -ms-transform: translateX(15px);
               transform: translateX(15px); }
+
+.cursor {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background: white;
+  z-index: 9999;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: none;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform .2s;
+          transition: transform .2s;
+  text-align: center; }
+  .cursor.mouseNotMoved {
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0); }
+  .cursor.mousedown {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8); }
+  .cursor.ng-hide-add {
+    -webkit-transform: scale(0.8) rotate(0deg);
+        -ms-transform: scale(0.8) rotate(0deg);
+            transform: scale(0.8) rotate(0deg); }
+  .cursor.ng-hide-add.ng-hide-add-active {
+    -webkit-transform: scale(0) rotate(500deg);
+        -ms-transform: scale(0) rotate(500deg);
+            transform: scale(0) rotate(500deg); }
+  .cursor svg {
+    display: inline-block;
+    margin-top: 10px; }

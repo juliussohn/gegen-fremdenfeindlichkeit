@@ -1,242 +1,279 @@
-.question{
-	&.showcursor{
-		cursor: url(../img/cursor.png) 30 30, auto;
-	}
-	.slider{
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		background-color: $color-1; 
-		z-index: 5;
-		overflow: hidden;
+.question {
+    height: 100vh;
 
-		&.clicked{
-			height: 100% !important;
-			transition:all .5s;
-			 transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
-		}
+    &.showcursor {
+        cursor: none;
+    }
 
-		h1{
-			position: fixed;
-			color: white;
-		}
-		.value{
-			color: white;
-			position: fixed;
-			right: 0;
-			&.bottom{
-				position: relative;
-			}
-		}
-	}
-	h1{
-			z-index: 2;
-			max-width:600px;
-			left: 50px;
-			top: 30px;
-			position: absolute;
-	}
-	
-	&.clicked{
-		.slider{
-			height: 100vw;
-			
-		}
-	}
-	.answer{
-		background-color: $black;
+    .slider {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: $color-1;
+        z-index: 5;
+        overflow: hidden;
 
-		position: absolute;
-		width:100%;
-		z-index: 8;
-		height: calc(100% - 150px);
-		 transition:all .65s;
-		  transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* easeOutSine */
-		  transition-delay: .1s;
-		  color: white;
-		  visibility: hidden;
-		// top:-150px;
+        &.clicked {
+            height: 100% !important;
+            transition: all .5s;
+            transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
 
-		&.visible-add {
-		  top:100%;
-		  height: 100%;
-		}
+            /* easeOutSine */
+        }
 
-		&.visible-add-active {
-		  top:0px;
-		  height: calc(100% - 150px);
-		}
-		&.visible {
-			visibility:visible;
-		  top:0px;
-		  height: calc(100% - 150px);
-		}
-		.content{
-			
-			margin: 0 auto;
-			margin-top: calc(50vh - 75px);
-			transform:translateY(-50%)
+        h1 {
+            position: fixed;
+            color: white;
+        }
 
-		}
-		.chart{
-			canvas{
-				display: block;
-				margin: 0 auto;
-			}
-			height: 300px;
-		}
-		.result{
-			font-size: 70px;
-			margin-top: -20px;
-			margin-bottom: -10px;
-			display: block;
-			text-transform: uppercase;
-		}
-		.info{
-			position: absolute;
-			right: 50px;
-			bottom: 30px;
-			display: block;
-			color: white;
-			&:hover{
-				.info-icon{
-					transform: perspective(1px) scale(1.2);
-				}
-			}
-			.info-icon{
-				height: 30px;
-				width: 30px;
-				background-color: white;
-				border-radius: 100%;
-				color: $black;
-				text-align: center;
-				font-size: 20px;
-				float: left;
-				transition: all .2s;
-				&:after{
-					content: 'i';
-				}
-				
-			}
-			.info-text{
-				text-transform: uppercase;
-				line-height: 30px;
-				font-weight: 600;
-				float: left;
-				margin-right: 20px;
-				transition: all .3s;
-				&.ng-hide-add { 
-					opacity: 1;
-					margin-right: 20px;
-				 }
-				&.ng-hide-add.ng-hide-add-active { 
-					opacity: 0;
-					margin-right: 40px;
-				 }
-				&.ng-hide-remove { 
-					opacity: 0;
-					margin-right: 40px;
-				 }
-				&.ng-hide-remove.ng-hide-remove-active {
-					opacity: 1;
-					margin-right: 20px;
-				 }
-							}
-		}
+        .value {
+            color: white;
+            position: fixed;
+            right: 0;
 
+            &.bottom {
+                position: relative;
+            }
+        }
+    }
 
-	}
-	.bottom-bar{
-		height: 150px;
-		position: absolute;
-		bottom: 0;
-		width: 100%; 
-		text-transform: uppercase;
-		float: left;
-		&>div{
-			float: right;
-		}
-		.next-container{
-			float: right;
-			height: 100%;
-			overflow: hidden;
-			max-width: 0;
-			
-			transition: all 1s cubic-bezier(.17,.67,.22,.9);
-			transition-delay:1.6s;
-			&.clicked{
-				max-width: 200px;
-			}
-			&.clicked-add{
-				max-width: 0;
-			}	
-			&.clicked-add.clicked-add-active{
-				max-width: 200px;
-			}
-		}
-		.next{
-			background-color: white;
-			width: 80px;
-			display: block;
-			height: 100%;
-			background-color:255;
-			line-height: 170px;
-			color: $black;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-size: 50px;
-			padding: 0 35px;
-			cursor: pointer;	
-			transition: all .3s cubic-bezier(.17,.67,.22,.9);;
-			&:hover{
-				text-indent: 10px;
-				//opacity: .2;
-			}
-			
-		}
-	}
-	.your-tip{
-		text-transform: uppercase;
-		 transition-delay: .4s;
-		 opacity: 0;
-		 &.clicked{
-		 	opacity: 1;
-		 }
-		&.clicked-add {
-		  opacity: 0;
-		}
-		&.clicked-add.clicked-add-active {
-		  opacity: 1;
-		}
-	}
-	.value{
-		line-height: 150px;
-		//padding-bottom: 30px;
-		padding-right: 50px;
-		font-size: 60px;
-		color: $black;
-		text-emphasis: after;text-transform: uppercase;
-		&.background{
-			position: absolute;
-			bottom: 0;
-			right: 0;
-		}
-	}
+    h1 {
+        z-index: 2;
+        max-width: 600px;
+        left: 50px;
+        top: 30px;
+        position: absolute;
+        backface-visibility: hidden;
+    }
 
-	.color-1{
-		.slider{
-			background-color: $color-1;
-		}
-	}
-	.color-2{
-		.slider{
-			background-color: $color-2;
-		}
-	}
-	.color-3{
-		.slider{
-			background-color: $color-3;
-		}
-	}
+    &.clicked {
+        .slider {
+            height: 100vw;
+        }
+    }
+
+    .answer {
+        background-color: $black;
+        position: absolute;
+        width: 100%;
+        z-index: 8;
+        height: calc(100% - 150px);
+        transition: all .65s;
+        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+        /* easeOutSine */
+        transition-delay: .1s;
+        color: white;
+        visibility: hidden;
+
+        // top:-150px;
+
+        &.visible-add {
+            top: 100%;
+            height: 100%;
+        }
+
+        &.visible-add-active {
+            top: 0px;
+            height: calc(100% - 150px);
+        }
+
+        &.visible {
+            visibility: visible;
+            top: 0px;
+            height: calc(100% - 150px);
+        }
+
+        .content {
+            margin: 0 auto;
+            margin-top: calc(50vh - 75px);
+            transform: translateY(-50%);
+        }
+
+        .chart {
+            canvas {
+                display: block;
+                margin: 0 auto;
+            }
+
+            height: 300px;
+        }
+
+        .result {
+            font-size: 70px;
+            margin-top: -20px;
+            margin-bottom: -10px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .info {
+            position: absolute;
+            right: 50px;
+            bottom: 30px;
+            display: block;
+            color: white;
+
+            &:hover {
+                .info-icon {
+                    transform: perspective(1px) scale(1.2);
+                }
+            }
+
+            .info-icon {
+                height: 30px;
+                width: 30px;
+                background-color: white;
+                border-radius: 100%;
+                color: $black;
+                text-align: center;
+                font-size: 20px;
+                float: left;
+                transition: all .2s;
+
+                &:after {
+                    content: 'i';
+                }
+            }
+
+            .info-text {
+                text-transform: uppercase;
+                line-height: 30px;
+                font-weight: 600;
+                float: left;
+                margin-right: 20px;
+                transition: all .3s;
+
+                &.ng-hide-add {
+                    opacity: 1;
+                    margin-right: 20px;
+                }
+
+                &.ng-hide-add.ng-hide-add-active {
+                    opacity: 0;
+                    margin-right: 40px;
+                }
+
+                &.ng-hide-remove {
+                    opacity: 0;
+                    margin-right: 40px;
+                }
+
+                &.ng-hide-remove.ng-hide-remove-active {
+                    opacity: 1;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+    .bottom-bar {
+        height: 150px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-transform: uppercase;
+        float: left;
+
+        & > div {
+            float: right;
+        }
+
+        .next-container {
+            float: right;
+            height: 100%;
+            overflow: hidden;
+            max-width: 0;
+            transition: all 1s cubic-bezier(0.17, 0.67, 0.22, 0.9);
+            transition-delay: 1.6s;
+
+            &.clicked {
+                max-width: 200px;
+            }
+
+            &.clicked-add {
+                max-width: 0;
+            }
+
+            &.clicked-add.clicked-add-active {
+                max-width: 200px;
+            }
+        }
+
+        .next {
+            background-color: white;
+            width: 80px;
+            display: block;
+            height: 100%;
+            background-color: 255;
+            line-height: 170px;
+            color: $black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 50px;
+            padding: 0 35px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.17, 0.67, 0.22, 0.9);
+
+            &:hover {
+                text-indent: 10px;
+
+                //opacity: .2;
+           
+            }
+        }
+    }
+
+    .your-tip {
+        text-transform: uppercase;
+        transition-delay: .4s;
+        opacity: 0;
+
+        &.clicked {
+            opacity: 1;
+        }
+
+        &.clicked-add {
+            opacity: 0;
+        }
+
+        &.clicked-add.clicked-add-active {
+            opacity: 1;
+        }
+    }
+
+    .value {
+        line-height: 150px;
+
+        //padding-bottom: 30px;
+        padding-right: 50px;
+        font-size: 60px;
+        color: $black;
+        text-emphasis: after;
+        text-transform: uppercase;
+
+        &.background {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .color-1 {
+        .slider {
+            background-color: $color-1;
+        }
+    }
+
+    .color-2 {
+        .slider {
+            background-color: $color-2;
+        }
+    }
+
+    .color-3 {
+        .slider {
+            background-color: $color-3;
+        }
+    }
 }
-

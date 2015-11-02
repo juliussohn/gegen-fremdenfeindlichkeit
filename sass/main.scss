@@ -1,41 +1,75 @@
-html, body{
-	margin: 0;
-	padding: 0;
-
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-.row{
-	max-width:1000px;
-	margin: 0 auto;
-	width: 100%;
-	&:after{
-		 clear: both;
-		 content: " ";
-			display: table;
-	}
+.row {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+
+    &:after {
+        clear: both;
+        content: " ";
+        display: table;
+    }
 }
-[class^="col-"]{
-	padding: 0 25px;
-	box-sizing:border-box;
-	float: left;
-	min-height: 10px;
-	position: relative;
-	&:last-child{
-		float: right;
-		
-	}
+
+[class^="col-"] {
+    padding: 0 25px;
+    box-sizing: border-box;
+    float: left;
+    min-height: 10px;
+    position: relative;
+
+    &:last-child {
+        float: right;
+    }
 }
-.col-25{ width: 25%;}
-.col-30{ width: 30%;}
-.col-33{ width: 33.333333%;}
-.col-35{ width: 35%;}
-.col-40{ width: 40%;}
-.col-50{ width: 50%;}
-.col-60{ width: 60%;}
-.col-65{ width: 65%;}
-.col-66{ width: 66.666666%;}
-.col-70{ width: 70%;}
-.col-100{ width: 100%;}
+
+.col-25 {
+    width: 25%;
+}
+
+.col-30 {
+    width: 30%;
+}
+
+.col-33 {
+    width: 33.333333%;
+}
+
+.col-35 {
+    width: 35%;
+}
+
+.col-40 {
+    width: 40%;
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.col-60 {
+    width: 60%;
+}
+
+.col-65 {
+    width: 65%;
+}
+
+.col-66 {
+    width: 66.666666%;
+}
+
+.col-70 {
+    width: 70%;
+}
+
+.col-100 {
+    width: 100%;
+}
 
 @import "settings";
 @import "type";
@@ -44,6 +78,44 @@ html, body{
 @import "components/graphs";
 @import "components/d3";
 @import "components/results";
-@import "components/start_page"; 
+@import "components/start_page";
 
+.cursor {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    background: white;
+    z-index: 9999;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    cursor: none;
+    transform: scale(1);
+    transition: transform .2s;
 
+    &.mouseNotMoved {
+        transform: scale(0);
+    }
+
+    &.mousedown {
+        transform: scale(0.8);
+    }
+
+    &.ng-hide {}
+
+    &.ng-hide-add {
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    &.ng-hide-add.ng-hide-add-active {
+        transform: scale(0) rotate(500deg);
+    }
+
+    text-align: center;
+
+    svg {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}

@@ -53,6 +53,14 @@
 		text-transform: uppercase;
 		line-height: 150px;
 		transition:all .3s;
+
+		&.ng-hide-add{
+			opacity: 1;
+		}
+
+		&.ng-hide-add-active{
+			opacity: 0;
+		}
 		img{
 			height: 30px;
 			margin-left: 20px;

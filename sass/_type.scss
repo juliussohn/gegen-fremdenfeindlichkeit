@@ -1,25 +1,26 @@
-*{
-	font-family: "brandon-grotesque";
-	font-weight: 800;
-	 font-smoothing: antialiased;
+* {
+    font-family: "brandon-grotesque";
+    font-weight: 800;
+    font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
-h1{
-	font-size: 42px; 
-	text-transform: uppercase;
-	color: $black;
+h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    color: $black;
 }
-h2{
-	text-align: left;
-	font-size: 20px;
+
+h2 {
+    text-align: left;
+    font-size: 20px;
 }
-p{
-	font-size: 22px; 
-	text-transform: none;
-	font-weight: 700;
-	line-height: 1.4;
-	margin: 0;
+
+p {
+    font-size: 22px;
+    text-transform: none;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
 }

@@ -12,44 +12,54 @@
         <script src="js/services.js"></script>
         <script src="https://use.typekit.net/mxq0yba.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        <link rel="stylesheet" href="bower_components/angular-wizard/dist/angular-wizard.min.css">
+        <link rel="stylesheet" href="bower_componentsy/angular-wizard/dist/angular-wizard.min.css">
         <link rel="stylesheet" href="css/app.min.css?">
         <script src="bower_components/Chart.js/Chart.min.js"></script>
+        <meta name="viewport" content="width=1100" />
+        <title>Asyl in Zahlen</title>
     </head>
     <body ng-controller="appCtrl" ng-init="init()" >
         <wizard on-finish="finishedWizard()" hide-indicators="true" >
-        
-            <wz-step >
-            <div  class="startpage">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-100">
-
-                            <center><h1>Asyl in Zahlen</h1>
-                            <p>Die Flüchtlingssituation in Deutschland und weltweit geht uns alle etwas an. Aber auch wenn sich viele schon engagieren kennen wenige die wirklichen Zahlen und Fakten dahinter. In dieser interaktiven Infografik könnt ihr euer Wissen zu diesem Thema testen.</p></center>
-                        </div>
-                    </div>
-                    <div class="row introsteps">
-                        <div class="col-33">
-                            <img src="img/step-1.svg">
-                            <p>Bewege deinen cursor im Browserfenster auf und ab um um deinen Antwort festzulegen.</p>
-                        </div>
-                        <div class="col-33">
-                            <img src="img/step-2.svg">
-                            <p>Durch klicken bestätigst du deine Antwort und kriegst die Lösung im Vergleich zu deinem Tipp dargestellt.</p>
-                        </div>
-                        <div class="col-33">
-                            <img src="img/step-3.svg">
-                            <p>Mit dem Pfeil Button unten rechts in der Ecke geht es zur nächsten Frage.</p>
-                        </div>
+        <wz-step >
+        <div  class="startpage">
+            <div class="content">
+                <div class="row">
+                    <div class="col-100">
+                        <center><h1>Asyl in Zahlen</h1>
+                        <p>Die Flüchtlingssituation in Deutschland und weltweit geht uns alle etwas an. Aber auch wenn sich viele schon engagieren kennen wenige die wirklichen Zahlen und Fakten dahinter. In dieser interaktiven Infografik könnt ihr euer Wissen zu diesem Thema testen.</p></center>
                     </div>
                 </div>
-                <div class="startbutton"  ng-click="toStep('q_0')">Los geht's <img src="img/next-white.svg"></div>
+                <div class="row introsteps">
+                    <div class="col-33">
+                        <img src="img/step-1.svg">
+                        <p>Bewege deinen cursor im Browserfenster auf und ab um um deinen Antwort festzulegen.</p>
+                    </div>
+                    <div class="col-33">
+                        <img src="img/step-2.svg">
+                        <p>Durch klicken bestätigst du deine Antwort und kriegst die Lösung im Vergleich zu deinem Tipp dargestellt.</p>
+                    </div>
+                    <div class="col-33">
+                        <img src="img/step-3.svg">
+                        <p>Mit dem Pfeil Button unten rechts in der Ecke geht es zur nächsten Frage.</p>
+                    </div>
+                </div>
             </div>
-            </wz-step>
-         <wz-step wz-title="q_{{$index}}" ng-repeat="q in questions" ng-init="gotoStart()" ng-mousemove="q.clicked || changeValue($event, $index)" ng-click="setValue($event, $index)">
-
-            <div class="question" ng-class="{'showcursor' : !q.clicked}">
+            <div ng-hide="started" class="startbutton"  ng-click="toStep('q_0')">Los geht's <img src="img/next-white.svg"></div>
+        </div>
+        </wz-step>
+        <wz-step wz-title="q_{{$index}}" ng-repeat="q in questions" ng-init="gotoStart()" ng-mousemove="q.clicked || changeValue($event, $index)" ng-click="setValue($event, $index)">
+        <div class="cursor mouseNotMoved" ng-show="!q.clicked" ng-mousedown="cursorMousedown($event)">
+            <svg width="22px" height="40px" viewBox="0 0 22 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="{{q.color}}">
+            <g sketch:type="MSArtboardGroup" transform="translate(-955.000000, -466.000000)" >
+            <g  sketch:type="MSLayerGroup" transform="translate(937.000000, 456.000000)">
+            <g  transform="translate(18.000000, 10.000000)" sketch:type="MSShapeGroup">
+            <path d="M11,0 L22,13.2593752 L0,13.2593752 L11,0 Z M11,39.2593752 L22,26 L0,26 L11,39.2593752 Z" id="Triangle-1"></path>
+            </g>
+            </g>
+            </g>
+            </svg>
+        </div>
+        <div class="question" ng-class="{'showcursor' : !q.clicked}">
             <h1 ng-hide="q.showchart">{{q.question}}</h1>
             <span ng-hide="q.showchart" class="value background">{{q.value}}{{q.unit}}</span>
             <div ng-style="{'background-color':q.color, 'height':q.slider_height}" class="slider" ng-class="{clicked: q.clicked}">
@@ -62,118 +72,57 @@
                         <span class="your-tip" ng-class="{'clicked' : q.clicked}">Dein Tipp war </span>
                         {{q.value}}{{q.unit}}
                     </div>
-
                 </div>
             </div>
             <div class="answer" ng-class="{visible: q.clicked}">
                 <div class="content" ng-include="q.charttemplate">
-
-
                 </div>
                 <a target="_blank" href="{{q.source}}" class="info" ng-mouseover="show_info = true" ng-mouseleave="show_info=false">
                 <div class="info-text" ng-show="show_info">{{q.sourcetitle}}</div>
                 <div class="info-icon"></div>
                 </a>
             </div>
-            </div>
-            </wz-step>
-        
-       
-<wz-step  wz-title="q_8">
-            <div class="results">
+        </div>
+        </wz-step>
+        <wz-step  wz-title="q_8">
+        <div class="results">
             <div class="results_content">
-            <div class="row">
-                <div class="col-100">
-                    <h1 wz-next>Dein Ergebnis</h1>
-                    <div class="legend">
-                        <ul>
-                        <li><div class="color_sq "></div> Deine Schätzung</li>
-                        <li><div class="color_sq blue"></div> Richtiges Ergebnis</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
                 <div class="row">
-                    <div class="col-25 " ng-if="showresults" ng-repeat="q in questions">
-                    <div class="result_info"  >
-                    <div class="question-text" ng-style="{'background-color':q.color}">
-                    {{q.question}}
-                    </div>
-                        <h2 >Frage {{$index +1 }}</h2>
-                        <canvas  class="result_chart" width="210" height="150" ng-init="result_chart($index)"></canvas>
-                        <div class="row">
-                            <div class="col-50">{{q.value}}{{q.unit}}</div>
-                            <div class="col-50">{{q.result}}{{q.unit}}</div>
+                    <div class="col-100">
+                        <h1 wz-next>Dein Ergebnis</h1>
+                        <div class="legend">
+                            <ul>
+                                <li><div class="color_sq "></div> Deine Schätzung</li>
+                                <li><div class="color_sq blue"></div> Richtiges Ergebnis</li>
+                            </ul>
                         </div>
                     </div>
-                    </div>
-                </div>
-                </div>
-
-                <a ng-click="refresh()" class="refresh">
-                    <div class="circle">
-                        <img src="img/reload.svg">
-                    </div>
-                    <div class="text">Neustart</div>
-                </a>
-            </div>
-            </div>
-            </wz-step>
-           <!-- <wz-step >
-            <div class="results">
-                <div class="row">
-                    <div class="col-25">
-                        <canvas  id="result_1" width="200" height="200" ng-init="result_1()"></canvas>
-                    {{values[0]}} EUR<br>3300 EUR</div>
-                    <div class="col-25">90 %<br>45%</div>
-                    <div class="col-25">1 Monate<br>3 Monate</div>
-                    <div class="col-25">100 Mio EUR<br>243 Mio EUR</div>
                 </div>
                 <div class="row">
-                    <div class="col-25">143 EUR</div>
-                    <div class="col-25">12 Monate</div>
-                    <div class="col-25">2000 Tote</div>
-                    <div class="col-25">51%</div>
+                    <div class="col-25 " ng-if="showresults" ng-repeat="q in questions">
+                        <div class="result_info"  >
+                            <div class="question-text" ng-style="{'background-color':q.color}">
+                                {{q.question}}
+                            </div>
+                            <h2 >Frage {{$index +1 }}</h2>
+                            <canvas  class="result_chart" width="210" height="150" ng-init="result_chart($index)"></canvas>
+                            <div class="row">
+                                <div class="col-50">{{q.value}}{{q.unit}}</div>
+                                <div class="col-50">{{q.result}}{{q.unit}}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </wz-step>
-           
-            <wz-step  >
-
-            <question  min="0" max="4000" unit="{{' EUR'}}" question="Wie viel verdient Deutschland jährlich an einem Asylant?" color="#7e8c8d" result="3300"  charttemplate="templates/charts/tax.html" source="http://www.badische-zeitung.de/fakten-check-deutschland-geht-es-immer-schlechter" sourcetitle="Badische Zeitung – Dezember 2014">
-            </question>
-            </wz-step>
-
-            <wz-step  >
-
-            <question  min="0" max="100" unit="{{'%'}}" question="Wie viele Asynanträge blieben in Deutschland 2015 unbearbeitet?" color="#16a086" result="45"  charttemplate="templates/charts/unfinished.html" source="http://www.rp-online.de/politik/deutschland/asylantraege-unbearbeitet-bundesamt-fuer-fluechtlinge-im-rueckstand-aid-1.5381979
-            " sourcetitle="RP Online – September 2015">
-            </question>
-            </wz-step>
-            <wz-step  >
-            <question  min="0" max="6" unit="{{' Monate'}}" question="Wie lange dürfen Flüchtlinge nach ihrer Ankunft nicht Arbeiten?" color="#576474" result="3"  charttemplate="templates/charts/work.html" source="http://www.proasyl.de/de/themen/basics/basiswissen/rechte-der-fluechtlinge/" sourcetitle="Proasyl – Oktober 2015">
-            </question>
-            </wz-step>
-            <wz-step  >
-            <question  min="100" max="600" unit="{{' MIO EUR'}}" question="Wie viel Geld vom Bundeshaushalt wurde 2015 für das Bundesamt für Migration und Flüchtlinge ausgegeben?" color="#eb6f63" result="243"  charttemplate="templates/charts/bundeshaushalt.html" source="http://www.bundeshaushalt-info.de/#/2015/soll/ausgaben/einzelplan.html" sourcetitle="Bundeshaushalt – Oktober 2015">
-            </question>
-            </wz-step>
-            <wz-step  >
-            <question  min="0" max="1000" unit="{{' EUR'}}" question="Wie viel Geld bekommt ein Asylbewerberm monatlich in der Erstaufnahmeinrichtung?" color="2980B9" result="143"  charttemplate="templates/charts/money.html" source="http://www.spiegel.de/politik/deutschland/fluechtlinge-in-deutschland-antworten-zum-taschengeld-a-1048432.html" sourcetitle="Spiegel – August 2015">
-            </question>
-            </wz-step>
-            <wz-step  >
-            <question  min="0" max="12" unit="{{' Monate'}}" question="Wie lange dauert die durchschnittliche Bearbeitungsdauer für einen Sylantrag in Deutschland?" color="#52BE80" result="12"  charttemplate="templates/charts/application_duration.html" source="http://www.welt.de/politik/deutschland/article145595071/So-wird-die-Dauer-von-Asylverfahren-verschleiert.html" sourcetitle="Die Welt – August 2015">
-            </question>
-            </wz-step>
-            <wz-step  >
-            <question  min="0" max="2000" unit="{{' Tote'}}" question="Wie viele Flüchtlinge starben 2015 bei der Flucht über das Mittelmeer?" color="#2980B9" result="2000"  charttemplate="templates/charts/deaths.html" source="http://www.tagesspiegel.de/politik/ertrunkene-fluechtlinge-2015-schon-30-mal-mehr-tote-im-mittelmeer-als-im-vorjahreszeitraum/11664838.html" sourcetitle="tagessschau.de – August 2015">
-            </question>
-            </wz-step>
-            <wz-step  >
-            <question  min="0" max="100" unit="%" question="Wie viel Prozent der Flüchtlinge weltweit sind Kinder?" result="51"  color="#A468BD" charttemplate="templates/charts/children.html" source="https://www.uno-fluechtlingshilfe.de/fluechtlinge/themen/fluechtlingskinder.html" sourcetitle="Uno Flüchtlingshilfe – Oktober 2015">
-            </question>
-            </wz-step>-->
-            </wizard>
-        </body>
-    </html>
+            <a ng-click="refresh()" class="refresh">
+            <div class="circle">
+                <img src="img/reload.svg">
+            </div>
+            <div class="text">Neustart</div>
+            </a>
+        </div>
+    </div>
+    </wz-step>
+    </wizard>
+</body>
+</html>

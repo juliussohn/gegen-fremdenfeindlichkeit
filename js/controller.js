@@ -5,20 +5,23 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
     $scope.i = 0;
     $scope.values = [];
     $scope.$on('valueSet', function (event, data) {
-        $scope.values.push(data)
+        $scope.values.push(data);
         if ($scope.values.length == 8) {
             //  $scope.finished = true
         }
-        console.log($scope.values)
+        console.log($scope.values);
     }); 
+
     $scope.toStep = function (i) {
-        console.log(i)
         WizardHandler.wizard()
             .goTo(i);
-        if (i == "q_8") {
-            $scope.showresults = true
+        if (i == "q_0") {
+            $scope.started = true;
         }
-    }
+        if (i == "q_8") {
+            $scope.showresults = true;
+        }
+    };
     $scope.questions = [    {    
         min: 0,
             max: 100,
@@ -110,27 +113,34 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
     } ];
     $scope.getNumber = function (num) {
         return new Array(num);
-    }
+    };
     $scope.setValue = function ($event, i) {
-        var question = $scope.questions[i]
+        var question = $scope.questions[i];
         question.clicked = true;
         setTimeout(function () {
             question.showchart = true;
             $scope.$apply();
         }, 800);
-    }
+    };
+    $scope.cursorMousedown = function($event){
+        $($event.currentTarget).addClass("mousedown");
+    };
     $scope.changeValue = function ($event, i) {
+
         var question = $scope.questions[i];
-        
+        $($event.currentTarget).find(".cursor").css({
+            top:($event.pageY-30)+"px",
+            left:($event.pageX-30)+"px",
+        }).removeClass("mouseNotMoved");
         wh = $(window)
-            .height()
+            .height();
         y = wh - $event.pageY;
         perc = y / wh;
         delta = question.max - question.min;
         //scope.value = 10 * Math.round((delta * perc + attr.min) / 10);
         question.value = Math.round((delta * perc + question.min));
         question.slider_height = y;
-    }
+    };
     $scope.bar_options = {
         scaleBeginAtZero: true,
         scaleShowGridLines: false,
@@ -146,7 +156,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         barDatasetSpacing: 20,
         showScale: false,
         legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
-    }
+    };
     $scope.pi_options = {
         responsive: false,
         maintainAspectRatio: false,
@@ -184,7 +194,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         };
         chart = new Chart(ctx)
             .Bar(data, $scope.bar_options);
-    }
+    };
     $scope.chart_children = function () {
         var canvas = $("#chart_children");
         var color = (canvas.parents(".question")
@@ -203,7 +213,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         }];
         pi_chart = new Chart(ctx)
             .Doughnut(data_pi, $scope.pi_options);
-    }
+    };
     $scope.chart_bundeshaushalt = function () {
         var canvas = $("#chart_bundeshaushalt");
         var color = (canvas.parents(".question")
@@ -220,7 +230,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         }];
         chart_bundeshaushalt = new Chart(ctx)
             .Doughnut(data_bundeshaushalt, $scope.pi_options);
-    }
+    };
     $scope.chart_unfinished = function () {
         var canvas = $("#chart_unfinished");
         var color = (canvas.parents(".question")
@@ -237,7 +247,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         }];
         chart_unfinished = new Chart(ctx)
             .Doughnut(data_bundeshaushalt, $scope.pi_options);
-    }
+    };
     $scope.chart_deaths = function () {
         var canvas = $("#chart_deaths");
         var color = (canvas.parents(".question")
@@ -263,7 +273,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         };
         chart = new Chart(ctx)
             .Bar(data, $scope.bar_options);
-    }
+    };
     $scope.chart_tax = function () {
         var canvas = $("#chart_tax");
         var color = (canvas.parents(".question")
@@ -289,7 +299,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         };
         chart = new Chart(ctx)
             .Bar(data, $scope.bar_options);
-    }
+    };
     $scope.result_chart = function (index) {
         var options = bar_options = {
             scaleBeginAtZero: true,
@@ -307,7 +317,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
             showScale: false,
             responsive: false,
             maintainAspectRatio: false,
-        }
+        };
         setTimeout(function () {
             var canvas = $(".result_chart");
             console.log(index);
@@ -333,8 +343,8 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
             chart = new Chart(ctx)
                 .Bar(data, options);
         }, 800);
-    }
+    };
     $scope.refresh = function(){
         location.reload();
-    }
+    };
 });
