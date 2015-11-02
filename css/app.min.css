@@ -54,7 +54,7 @@ html, body {
   width: 100%; }
 
 * {
-  font-family: "brandon-grotesque";
+  font-family: "brandon-grotesque", sans-serif;
   font-weight: 800;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -1147,6 +1147,6 @@ Interactive Layer
     top: 50%;
     margin-top: -150px; }
     .changeBrowser .message a {
-      color: #999999;
+      color: #52BE80;
       text-decoration: none;
       font-weight: 100; }
