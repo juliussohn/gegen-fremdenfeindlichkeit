@@ -73,7 +73,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
             color: "#16a086",
             charttemplate: "templates/charts/unfinished.html",
             source: "http://www.rp-online.de/politik/deutschland/asylantraege-unbearbeitet-bundesamt-fuer-fluechtlinge-im-rueckstand-aid-1.5381979",
-        value: 40,
+            value: 40,
             sourcetitle: "RP Online – September 2015"    
     }, {    
         min: 0,
@@ -91,7 +91,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
             max: 4000,
             result: 3300,
             unit: " EUR",
-            question: "Wie viel Steuern verdient Deutschland jährlich mehr an einem Asylanten, als es für jenen ausgibt?",
+            question: "Wie viel Steuern verdient Deutschland jährlich mehr an einem Asylanten, als es für diesen ausgibt?",
             color: "#7e8c8d",
             charttemplate: "templates/charts/tax.html",
             source: "http://www.badische-zeitung.de/fakten-check-deutschland-geht-es-immer-schlechter",
