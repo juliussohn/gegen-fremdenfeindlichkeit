@@ -1,4 +1,8 @@
-var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo']);
+var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo','angulartics.google.analytics']);
+app.config(function ($analyticsProvider) {
+  // turn off automatic tracking
+  $analyticsProvider.virtualPageviews(false);
+});
 app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
     $scope.value = 0;
     $scope.number = 5;
@@ -14,8 +18,10 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler) {
         $scope.browser = $scope.getBrowser();
         if( ($scope.browser[0] == "Safari" && $scope.browser[1] > 8 ) ||($scope.browser[0] == "Chrome" && $scope.browser[1] > 40 ) ){
             $scope.changeBrowser = false;
+            $analytics.eventTrack('Browser allowed', {  category: 'Browser', label: $scope.browser[0]+"/"+$scope.browser[1] });
         }else{
             $scope.changeBrowser = true;
+            $analytics.eventTrack('Browser not allowed', {  category: 'Browser', label: $scope.browser[0]+"/"+$scope.browser[1] });
         }
 
 
