@@ -151,9 +151,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
     };
     $scope.setValue = function ($event, i) {
         var question = $scope.questions[i];
-        $window.ga('send', 'event', 'Question', 'Frage '+ (i+1), {
-          'Wert': question.value
-        });
+        $window.ga('send', 'event', 'Question', 'Frage '+ (i+1), question.value);
         console.log(question.value);
 
         question.clicked = true;
