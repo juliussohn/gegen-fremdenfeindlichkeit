@@ -151,6 +151,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
     };
     $scope.setValue = function ($event, i) {
         var question = $scope.questions[i];
+        $window.ga('send', 'event', 'Question', i,  question.value );
         question.clicked = true;
         setTimeout(function () {
             question.showchart = true;
