@@ -1,4 +1,4 @@
 # gegen-fremdenfeindlichkeit
 Ein Kurzzeitprojekt an der HTW Berlin
 
-juliussohn.github.io/gegen-fremdenfeindlichkeit
+[Hier geht's zum Projekt](http://juliussohn.github.io/gegen-fremdenfeindlichkeit)
