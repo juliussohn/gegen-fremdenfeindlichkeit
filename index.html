@@ -13,21 +13,34 @@
         <script src="js/services.js"></script>
         <script src="https://use.typekit.net/mxq0yba.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        <link rel="stylesheet" href="css/app.min.css?">
+        <link rel="stylesheet" href="css/app.css?">
         <script src="bower_components/Chart.js/Chart.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>Asyl in Zahlen</title>
     </head>
     <body ng-controller="appCtrl" ng-init="init()" >
-    <div class="changeBrowser" ng-show="changeBrowser">
-    <div class="message">
-    <div class="browserLogos">
-    <a href="">
-<a href="https://www.google.de/chrome/browser/desktop/" target="_blank"><img src="img/chrome.png"></a>
-<a target="_blank" href="https://support.apple.com/de_DE/downloads/safari"><img src="img/safari.png"></a></div>
-    Um eine flüssige und korrekte Darstellung dieser Seite zu garantieren empfehlen wir sie mit der neusten Version <a href="https://www.google.de/chrome/browser/desktop/" target="_blank">Google Chrome</a> oder <a target="_blank" href="https://support.apple.com/de_DE/downloads/safari">Safari</a> zu öffnen.</div>
-    </div>
-    <div id="progress"><div class="progressBar" ng-style="{ 'width': questionNumber >= 0 ? (100/questions.length)*(questionNumber+1) + '%':0, 'background-color':questions[questionNumber].color }"></div></div>
+        <div class="changeBrowser" ng-show="changeBrowser || is_touch_device">
+            <div class="message" ng-show="changeBrowser && !is_touch_device" >
+                <div class="browserLogos">
+                    <a href="https://www.google.de/chrome/browser/desktop/" target="_blank"><img src="img/chrome.png"></a>
+                    <a target="_blank" href="https://support.apple.com/de_DE/downloads/safari"><img src="img/safari.png"></a>
+                </div>
+                <p>
+                Um eine flüssige und korrekte Darstellung dieser Seite zu garantieren empfehlen wir sie mit der neusten Version <a href="https://www.google.de/chrome/browser/desktop/" target="_blank">Google Chrome</a> oder <a target="_blank" href="https://support.apple.com/de_DE/downloads/safari">Safari</a> zu öffnen.
+                </p>
+
+            </div>
+            <div class="message" ng-show="is_touch_device" >
+                <div class="browserLogos">
+                    <a href="https://www.google.de/chrome/browser/desktop/" target="_blank"><img src="img/cursor-touch.png"></a>
+                </div>
+                <p >
+                Diese Seite kannst du leider nicht mit einem Touchdisplay bedienen.
+                </p>
+
+            </div>
+        </div>
+        <div id="progress"><div class="progressBar" ng-style="{ 'width': questionNumber >= 0 ? (100/questions.length)*(questionNumber+1) + '%':0, 'background-color':questions[questionNumber].color }"></div></div>
         <wizard on-finish="finishedWizard()" hide-indicators="true" >
         <wz-step >
         <div  class="startpage">
@@ -133,15 +146,13 @@
     </div>
     </wz-step>
     </wizard>
-    <script> 
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-69618111-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-69618111-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>

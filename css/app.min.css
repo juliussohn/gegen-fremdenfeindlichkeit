@@ -1125,7 +1125,6 @@ Interactive Layer
     background-color: black; }
 
 .changeBrowser {
-  font-size: 28px;
   z-index: 9999;
   position: fixed;
   height: 100vh;
@@ -1135,6 +1134,8 @@ Interactive Layer
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   color: white; }
+  .changeBrowser p {
+    font-size: 28px; }
   .changeBrowser .browserLogos {
     margin-bottom: 20px; }
     .changeBrowser .browserLogos img {
@@ -1150,3 +1151,7 @@ Interactive Layer
       color: #52BE80;
       text-decoration: none;
       font-weight: 100; }
+
+@media screen and (max-width: 768px) {
+  .changeBrowser .message p {
+    font-size: 16px; } }

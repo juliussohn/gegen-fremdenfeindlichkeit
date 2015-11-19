@@ -11,8 +11,9 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
         }
     }); 
     $scope.init = function () {
+        $scope.is_touch_device = $scope.is_touch_device();
         $scope.browser = $scope.getBrowser();
-        if ((($scope.browser[0] == "Safari" && $scope.browser[1] > 8) || ($scope.browser[0] == "Chrome" && $scope.browser[1] > 40)) && !$scope.is_touch_device()) {
+        if (($scope.browser[0] == "Safari" && $scope.browser[1] > 8) || ($scope.browser[0] == "Chrome" && $scope.browser[1] > 40))  {
             $scope.changeBrowser = false;
             $window.ga('send', 'event', 'Browser', 'allowed', $scope.browser[0] + "/" + $scope.browser[0]);
         }
