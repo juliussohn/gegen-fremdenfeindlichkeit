@@ -1,5 +1,4 @@
 var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo']);
-
 app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) {
     $scope.value = 0;
     $scope.number = 5;
@@ -12,30 +11,26 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
         }
     }); 
     $scope.init = function () {
-        alert($scope.is_touch_device());
         $scope.browser = $scope.getBrowser();
-        alert($scope.browser[1]);
-        if( ($scope.browser[0] == "Safari" && $scope.browser[1] > 8 ) ||($scope.browser[0] == "Chrome" && $scope.browser[1] > 40 ) ){
+        if ((($scope.browser[0] == "Safari" && $scope.browser[1] > 8) || ($scope.browser[0] == "Chrome" && $scope.browser[1] > 40)) && !is_touch_device()) {
             $scope.changeBrowser = false;
-            $window.ga('send', 'event', 'Browser', 'allowed',  $scope.browser[0]+"/"+$scope.browser[0] );
-        }else{
+            $window.ga('send', 'event', 'Browser', 'allowed', $scope.browser[0] + "/" + $scope.browser[0]);
+        }
+        else {
             $scope.changeBrowser = true;
-             $window.ga('send', 'event', 'Browser', 'not allowed',  $scope.browser[0]+"/"+$scope.browser[0] );
+            $window.ga('send', 'event', 'Browser', 'not allowed', $scope.browser[0] + "/" + $scope.browser[0]);
             //$analytics.eventTrack('Browser not allowed', {  category: 'Browser', label: 'Allowed' });
         }
-
-
-        
     };
-    $scope.is_touch_device = function() {  
-  try {  
-    document.createEvent("TouchEvent");  
-    return true;  
-  } catch (e) {  
-    return false;  
-  }  
-}
-
+    $scope.is_touch_device = function () {
+        try {
+            document.createEvent("TouchEvent");
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    }
     $scope.getBrowser = function () {
         var ua = navigator.userAgent,
             tem,
@@ -52,10 +47,9 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
         }
         M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
         if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
-        M[1]=parseInt(M[1]);
+        M[1] = parseInt(M[1]);
         return M;
     };
-
     $scope.questions = [    {    
         min: 0,
             max: 100,
@@ -87,7 +81,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
             color: "#16a086",
             charttemplate: "templates/charts/unfinished.html",
             source: "http://www.rp-online.de/politik/deutschland/asylantraege-unbearbeitet-bundesamt-fuer-fluechtlinge-im-rueckstand-aid-1.5381979",
-            value: 40,
+        value: 40,
             sourcetitle: "RP Online – September 2015"    
     }, {    
         min: 0,
@@ -161,9 +155,8 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
     };
     $scope.setValue = function ($event, i) {
         var question = $scope.questions[i];
-        $window.ga('send', 'event', 'Question', 'Frage '+ (i+1), question.value);
+        $window.ga('send', 'event', 'Question', 'Frage ' + (i + 1), question.value);
         console.log(question.value);
-
         question.clicked = true;
         setTimeout(function () {
             question.showchart = true;
