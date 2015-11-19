@@ -1,63 +1,211 @@
-.startpage{
-	background-color: white;
-	z-index: 99;
-	position: relative;
-	height: 100vh;
-	width: 100vw;
-	.row{
-		max-width: 800px;
-	}
-	h1{
-		border-bottom: 5px solid $black;
-		font-size: 70px;
-		padding-bottom: 0px;
-		margin: 0 auto;
-		width: 540px;
-		margin-bottom: 0;
-		height: 90px;
-		overflow: hidden;
-		margin-bottom: 40px;
-		margin-top: 40px;
-		&+p{
-			padding: 0 50px;
-		}
-	}
-	p{
-		font-weight: 500px;
-		margin-bottom: 40px;
-	}
-	.introsteps{
-		p{
-			padding: 0;
-			font-size: 18px;
-			font-weight: 500;
-			text-align: center;
-			margin-top: 10px;
-		}
-	}
-	.startbutton{
+.startpage {
+    background-color: white;
+    z-index: 99;
+    position: fixed;
+    width: 100vw;
 
-		cursor: pointer;
-		height: 150px;
-		background-color: $black;
-		width: 100vw;
-		position: absolute;
-		bottom: 0;
-		text-align: center;
-		font-size: 40px;
-		color: white;
-		text-transform: uppercase;
-		line-height: 150px;
-		transition:all .3s;
-		img{
-			height: 30px;
-			margin-left: 20px;
-			transition:all .3s;
-		}
-		&:hover{
-			img{
-				transform:translateX(15px)
-			}
-		}
-	}
+    .content {
+        margin-top: calc(50vh - 95px);
+        transform: translateY(-50%);
+    }
+
+    .row {
+        max-width: 900px;
+    }
+
+    h1 {
+        // border-bottom: 5px solid $black;
+        font-size: 60px;
+        padding-bottom: 0px;
+        margin-bottom: 0;
+        height: 90px;
+        margin-bottom: 30px;
+        margin-top: 0px;
+        text-align: left;
+        display: inline-block;
+        position: relative;
+
+        &:after {
+            bottom: 5px;
+            width: 100%;
+            content: "";
+            position: absolute;
+            height: 5px;
+            display: block;
+            background: $black;
+        }
+
+        & + p {
+            padding: 0 50px;
+            line-height: 1.5;
+        }
+    }
+
+    p {
+        font-weight: 500px;
+        margin-bottom: 40px;
+    }
+
+    .introsteps {
+        & > .col-50 {
+            &:first-child {
+                padding-right: 40px;
+            }
+        }
+
+        svg {
+            width: 100%;
+        }
+
+        p {
+            padding: 0;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        small {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: 10px 13px;
+            color: rgba(0, 0, 0, 0.7);
+
+            // padding-right: 10px;
+            position: absolute;
+            font-family: "europa","brandon-grotesque", sans-serif;
+            font-weight: normal;
+            font-size: 14px;
+            left: 35px;
+        }
+    }
+
+    .startbutton {
+        cursor: pointer;
+        height: 150px;
+        background-color: $black;
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        font-size: 40px;
+        color: white;
+        text-transform: uppercase;
+        line-height: 150px;
+        transition: all .3s;
+
+        &.ng-hide-add {
+            opacity: 1;
+        }
+
+        &.ng-hide-add-active {
+            opacity: 0;
+        }
+
+        img {
+            height: 30px;
+            margin-left: 20px;
+            transition: all .3s;
+        }
+
+        &:hover {
+            img {
+                transform: translateX(15px);
+            }
+        }
+    }
+}
+
+.introNext {
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+#answer_fill {
+    transition: all .4s ease-out;
+    transform: translate(7.63426px, 7.21978px);
+}
+
+#answer_fill.ng-hide-remove {
+    transform: translate(7.63426px, 300px);
+}
+
+#answer_fill.ng-hide-remove-active {
+    transform: translate(7.63426px, 7.21978px);
+}
+
+#chart_left {
+    transition: all .4s ease-out;
+    transition-delay: .4s;
+
+    &.ng-hide-remove {
+        height: 0px;
+        transform: translateY(50.52747px);
+    }
+
+    &.ng-hide-remove-active {
+        height: 50.52747px;
+        transform: translateY(0);
+    }
+}
+
+#chart_right {
+    transition: all .4s ease-out;
+    transition-delay: .4s;
+
+    &.ng-hide-remove {
+        height: 0px;
+        transform: translateY(25px);
+    }
+
+    &.ng-hide-remove-active {
+        height: 25px;
+        transform: translateY(0);
+    }
+}
+
+#chart_bottom_bar {
+    transition: all .2s ease-out;
+    transition-delay: .4s;
+
+    &.ng-hide-remove {
+        height: 0;
+    }
+
+    &.ng-hide-remove-active {
+        height: 2.65934066px;
+    }
+}
+
+.introNext {
+    transition: all .2s ease-out;
+
+    &.hide {
+        transform: scale(0);
+    }
+}
+
+.buttonAnimation {
+    transition: all .3s ease-out;
+
+    &.ng-hide-remove {
+        transform: translateX(58px);
+    }
+
+    &.ng-hide-remove-active {
+        transform: translateX(0);
+    }
+}
+
+#guess {
+    transition: all .3s ease-out;
+
+    &.translated {
+        transform: translateX(-58px);
+    }
 }
