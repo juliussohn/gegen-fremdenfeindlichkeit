@@ -12,6 +12,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
         }
     }); 
     $scope.init = function () {
+        alert($scope.is_touch_device());
         $scope.browser = $scope.getBrowser();
         alert($scope.browser[1]);
         if( ($scope.browser[0] == "Safari" && $scope.browser[1] > 8 ) ||($scope.browser[0] == "Chrome" && $scope.browser[1] > 40 ) ){
@@ -26,6 +27,14 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
 
         
     };
+    $scope.is_touch_device = function() {  
+  try {  
+    document.createEvent("TouchEvent");  
+    return true;  
+  } catch (e) {  
+    return false;  
+  }  
+}
 
     $scope.getBrowser = function () {
         var ua = navigator.userAgent,
