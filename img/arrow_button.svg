@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="53px" height="53px" viewBox="0 0 53 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="v2" sketch:type="MSArtboardGroup" transform="translate(-1131.000000, -442.000000)">
+            <g id="Tutorial" sketch:type="MSLayerGroup" transform="translate(895.000000, 181.000000)">
+                <g id="arrow_button" transform="translate(236.000000, 261.000000)" sketch:type="MSShapeGroup">
+                    <circle id="Oval-3" fill="#000000" cx="26.5" cy="26.5" r="26.5"></circle>
+                    <path d="M30.2066409,24.6005328 L17.2737005,24.6005328 C16.1486505,24.6005328 15.2375,25.5163648 15.2375,26.6461008 C15.2375,27.7837131 16.149138,28.6916688 17.2737005,28.6916688 L29.9509449,28.6916688 L27.6274682,31.0151455 C26.8170938,31.8255199 26.8240704,33.1137254 27.6229144,33.9125694 C28.4273278,34.7169828 29.7189792,34.7093746 30.5203382,33.9080156 L35.9399824,28.4883714 C36.291951,28.317226 36.587369,28.0472945 36.790624,27.7144281 C37.0305689,27.3539733 37.1444293,26.9348864 37.1305956,26.5182528 C37.1487269,25.9721862 36.9475003,25.4219051 36.5305395,25.0049443 C36.3777786,24.8521834 36.2074463,24.7287067 36.0262373,24.6343891 L30.5203382,19.12849 C29.7189792,18.327131 28.4273278,18.3195228 27.6229144,19.1239362 C26.8240704,19.9227802 26.8170938,21.2109856 27.6274682,22.02136 L30.2066409,24.6005328 Z" id="Arrow" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -62,6 +62,7 @@
         height: calc(100% - 150px);
         transition: all .65s;
         transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+        font-family: "brandon-grotesque", sans-serif;
 
         /* easeOutSine */
         transition-delay: .1s;
@@ -107,6 +108,10 @@
             margin-bottom: -10px;
             display: block;
             text-transform: uppercase;
+        }
+
+        p {
+            font-family: "europa","brandon-grotesque", sans-serif;
         }
 
         .info {
@@ -230,6 +235,7 @@
         text-transform: uppercase;
         transition-delay: .4s;
         opacity: 0;
+        font-family: "brandon-grotesque", sans-serif;
 
         &.clicked {
             opacity: 1;
@@ -245,6 +251,7 @@
     }
 
     .value {
+        font-family: "brandon-grotesque", sans-serif;
         line-height: 150px;
 
         //padding-bottom: 30px;

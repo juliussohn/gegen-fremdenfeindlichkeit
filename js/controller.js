@@ -12,6 +12,12 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
             //  $scope.finished = true
         }
     }); 
+
+    $scope.nextIntroStep = function(){
+              $scope.introStep= $scope.introStep+1;
+      
+    }
+
     $scope.init = function () {
        
         $scope.is_touch_device = $scope.is_touch_device();

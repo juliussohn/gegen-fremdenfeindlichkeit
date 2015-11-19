@@ -51,10 +51,20 @@
                         <p>Die Flüchtlingssituation in Deutschland und weltweit geht uns alle etwas an. Aber auch wenn sich viele schon engagieren kennen wenige die wirklichen Zahlen und Fakten dahinter. In dieser interaktiven Infografik könnt ihr euer Wissen zu diesem Thema testen.</p>
                     </div>
                     <div class="col-50">
-                        <div ng-include="'img/step-1.svg'" ></div>
-                        <small ng-show="introStep==1">Bewege deinen Cursor im Browserfenster auf und ab um um deine Antwort festzulegen.</small>
+                        <h3 style="padding:0px 35px; margin-bottom:10px">So funktioniert's:</h3>
+                        <div style="padding:0px 25px 10px;" ng-include="'img/step-1.svg'" ></div>
+                        <div class="row">
+                             <div class="col-70">
+                                 <small ng-show="introStep==1">Bewege deinen Cursor im Browserfenster auf und ab um um deine Antwort festzulegen.</small>
                         <small ng-show="introStep==2">Durch Klicken bestätigst du deine Antwort und erhälst die Lösung im Vergleich zu deinem Tipp dargestellt.</small>
-                        <small ng-show="introStep==3">Durch Klicken bestätigst du deine Antwort und erhälst die Lösung im Vergleich zu deinem Tipp dargestellt.</small>
+                        <small ng-show="introStep==3">Mit dem Pfeil Button unten rechts in der Ecke geht es zur nächsten Frage.
+</small>
+                             </div>
+                             <div class="col-30" style="padding:0 10px 0 25px; !important;">
+                                 <img  src="img/arrow_button.svg" ng-click="nextIntroStep()" ng-class="{'hide':introStep>2}" class="introNext">
+                             </div>
+                        </div>
+                        
                     </div>
                    </div>
             </div>
