@@ -24,6 +24,7 @@
         h1 {
             position: fixed;
             color: white;
+            font-family: "brandon-grotesque", sans-serif;
         }
 
         .value {
@@ -44,6 +45,7 @@
         top: 30px;
         position: absolute;
         backface-visibility: hidden;
+        font-family: "brandon-grotesque", sans-serif;
     }
 
     &.clicked {

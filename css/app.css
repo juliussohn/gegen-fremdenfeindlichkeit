@@ -54,7 +54,7 @@ html, body {
   width: 100%; }
 
 * {
-  font-family: "brandon-grotesque", sans-serif;
+  font-family: "europa","brandon-grotesque", sans-serif;
   font-weight: 800;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -63,7 +63,8 @@ html, body {
 h1 {
   font-size: 42px;
   text-transform: uppercase;
-  color: #1e1e1e; }
+  color: #1e1e1e;
+  font-family: "brandon-grotesque", sans-serif; }
 
 h2 {
   text-align: left;
@@ -151,7 +152,8 @@ $step_animtaion_duration: .5s;
       /* easeOutSine */ }
     .question .slider h1 {
       position: fixed;
-      color: white; }
+      color: white;
+      font-family: "brandon-grotesque", sans-serif; }
     .question .slider .value {
       color: white;
       position: fixed;
@@ -164,7 +166,8 @@ $step_animtaion_duration: .5s;
     left: 50px;
     top: 30px;
     position: absolute;
-    backface-visibility: hidden; }
+    backface-visibility: hidden;
+    font-family: "brandon-grotesque", sans-serif; }
   .question.clicked .slider {
     height: 100vw; }
   .question .answer {
@@ -993,13 +996,12 @@ Interactive Layer
     border-bottom: 5px solid #1e1e1e;
     font-size: 70px;
     padding-bottom: 0px;
-    margin: 0 auto;
-    width: 540px;
     margin-bottom: 0;
     height: 90px;
     overflow: hidden;
     margin-bottom: 40px;
-    margin-top: 0px; }
+    margin-top: 0px;
+    text-align: left; }
     .startpage h1 + p {
       padding: 0 50px; }
   .startpage p {
@@ -1009,7 +1011,6 @@ Interactive Layer
     padding: 0;
     font-size: 18px;
     font-weight: 500;
-    text-align: center;
     margin-top: 10px;
     margin-bottom: 0; }
   .startpage .startbutton {
@@ -1035,6 +1036,16 @@ Interactive Layer
       transition: all .3s; }
     .startpage .startbutton:hover img {
       transform: translateX(15px); }
+
+#answer_fill {
+  transition: all .4s ease-out;
+  transform: translate(7.63426px, 7.21978px); }
+
+#answer_fill.ng-hide-remove {
+  transform: translate(7.63426px, 300px); }
+
+#answer_fill.ng-hide-remove-active {
+  transform: translate(7.63426px, 7.21978px); }
 
 .cursor {
   top: 0;
@@ -1106,5 +1117,15 @@ Interactive Layer
 @media screen and (max-width: 768px) {
   .changeBrowser .message p {
     font-size: 16px; } }
+
+svg {
+  width: 80%; }
+
+svg * {
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  /* easeOutExpo */ }
 
 /*# sourceMappingURL=app.css.map */

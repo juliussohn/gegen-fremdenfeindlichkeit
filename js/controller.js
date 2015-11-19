@@ -1,9 +1,11 @@
+
 var app = angular.module('gegen-fremdenfeindlichkeit', ['mgo-angular-wizard', 'ngAnimate', 'countTo']);
 app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) {
     $scope.value = 0;
     $scope.number = 5;
     $scope.i = 0;
     $scope.values = [];
+    $scope.introStep=1;
     $scope.$on('valueSet', function (event, data) {
         $scope.values.push(data);
         if ($scope.values.length == 8) {
@@ -11,6 +13,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
         }
     }); 
     $scope.init = function () {
+       
         $scope.is_touch_device = $scope.is_touch_device();
         $scope.browser = $scope.getBrowser();
         if (($scope.browser[0] == "Safari" && $scope.browser[1] > 8) || ($scope.browser[0] == "Chrome" && $scope.browser[1] > 40))  {
