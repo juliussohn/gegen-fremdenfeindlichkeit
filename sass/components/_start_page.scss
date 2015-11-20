@@ -81,6 +81,7 @@
     }
 
     .startbutton {
+        font-family: "brandon-grotesque", sans-serif;
         cursor: pointer;
         height: 150px;
         background-color: $black;
@@ -127,7 +128,7 @@
 }
 
 #answer_fill {
-    transition: all .4s ease-out;
+    transition: all .6s ease-out;
     transform: translate(7.63426px, 7.21978px);
 }
 
@@ -141,7 +142,7 @@
 
 #chart_left {
     transition: all .4s ease-out;
-    transition-delay: .4s;
+    transition-delay: .8s;
 
     &.ng-hide-remove {
         height: 0px;
@@ -156,7 +157,7 @@
 
 #chart_right {
     transition: all .4s ease-out;
-    transition-delay: .4s;
+    transition-delay: .8s;
 
     &.ng-hide-remove {
         height: 0px;
@@ -171,14 +172,14 @@
 
 #chart_bottom_bar {
     transition: all .2s ease-out;
-    transition-delay: .4s;
+    transition-delay: .7s;
 
     &.ng-hide-remove {
         height: 0;
     }
 
     &.ng-hide-remove-active {
-        height: 2.65934066px;
+        height: 3px;
     }
 }
 

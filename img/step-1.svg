@@ -21,9 +21,9 @@
                         <rect   id="guess_fill" fill="#F39C0F" x="7.96761134" y="91.5504677" width="312.064777" height="108.799107" rx="5">
                         	 	<animate 
                         		attributeName="height"  
-                        		from="108" 
-                        		to="108" 
-                        		values="108;108; 70; 70 ;108" 
+                        		from="118" 
+                        		to="118" 
+                        		values="118;118; 80; 80 ;118" 
                         		dur="2s" 
                         		fill="freeze" 
                         		repeatCount="indefinite"
@@ -31,9 +31,9 @@
                         	/>
                         	<animate 
                         		attributeName="y"  
-                        		from="91" 
-                        		to="91" 
-                        		values="91;91;129;129;91;" 
+                        		from="81" 
+                        		to="81" 
+                        		values="81;81;119;119;81;" 
                         		dur="2s" 
                         		fill="freeze" 
                         		repeatCount="indefinite"
@@ -42,14 +42,14 @@
                         </rect>
                         <rect ng-class="{'translated':introStep>2}" id="guess" fill="#FFFFFF" x="244.340081" y="168.505933" width="59.757085" height="18.5754572" rx="4"></rect>
                         <g id="cursor" transform="translate(172.631579, 62.360463)">
-                        	            	<animateTransform ng-if="introStep==1"
+                        	     <animateTransform 
                         		  attributeName="transform"
 		                          attributeType="XML"
 		                          type="translate"
-		                          from="172 62"
-		                          to="172 62"
+		                          from="172 52"
+		                          to="172 52"
 								  
-								  values="172 62;172 62; 172 100; 172 100 ;172 62" 
+								  values="172 52;172 52; 172 90; 172 90 ;172 52" 
 
 		                          dur="2s"
 		                          repeatCount="indefinite"/>

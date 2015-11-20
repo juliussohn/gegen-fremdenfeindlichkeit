@@ -78,6 +78,10 @@ h2 {
   text-align: left;
   font-size: 20px; }
 
+h3 {
+  font-size: 20px;
+  text-transform: uppercase; }
+
 p {
   font-size: 22px;
   text-transform: none;
@@ -1050,6 +1054,7 @@ Interactive Layer
     font-size: 14px;
     left: 35px; }
   .startpage .startbutton {
+    font-family: "brandon-grotesque", sans-serif;
     cursor: pointer;
     height: 150px;
     background-color: #1e1e1e;
@@ -1081,7 +1086,7 @@ Interactive Layer
     opacity: .7; }
 
 #answer_fill {
-  transition: all .4s ease-out;
+  transition: all .6s ease-out;
   transform: translate(7.63426px, 7.21978px); }
 
 #answer_fill.ng-hide-remove {
@@ -1092,7 +1097,7 @@ Interactive Layer
 
 #chart_left {
   transition: all .4s ease-out;
-  transition-delay: .4s; }
+  transition-delay: .8s; }
   #chart_left.ng-hide-remove {
     height: 0px;
     transform: translateY(50.52747px); }
@@ -1102,7 +1107,7 @@ Interactive Layer
 
 #chart_right {
   transition: all .4s ease-out;
-  transition-delay: .4s; }
+  transition-delay: .8s; }
   #chart_right.ng-hide-remove {
     height: 0px;
     transform: translateY(25px); }
@@ -1112,11 +1117,11 @@ Interactive Layer
 
 #chart_bottom_bar {
   transition: all .2s ease-out;
-  transition-delay: .4s; }
+  transition-delay: .7s; }
   #chart_bottom_bar.ng-hide-remove {
     height: 0; }
   #chart_bottom_bar.ng-hide-remove-active {
-    height: 2.65934066px; }
+    height: 3px; }
 
 .introNext {
   transition: all .2s ease-out; }
