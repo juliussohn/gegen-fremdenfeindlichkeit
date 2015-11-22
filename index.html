@@ -13,7 +13,7 @@
         <script src="js/services.js"></script>
         <script src="https://use.typekit.net/mxq0yba.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        <link rel="stylesheet" href="css/app.min.css?">
+        <link rel="stylesheet" href="css/app.css?">
         <script src="bower_components/Chart.js/Chart.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>flucht.io</title>
@@ -51,7 +51,7 @@
                         <p>Die Flüchtlingssituation in Deutschland und weltweit geht uns alle etwas an. Aber auch wenn sich viele schon engagieren kennen wenige die wirklichen Zahlen und Fakten dahinter. In dieser interaktiven Infografik könnt ihr euer Wissen zu diesem Thema testen.</p>
                     </div>
                     <div class="col-50">
-                        <h3 style="padding:0px 35px; margin-bottom:10px">So funktioniert's:</h3>
+                        <h3 style="padding:0px 35px; margin-bottom:20px">So funktioniert's:</h3>
                         <div style="padding:0px 25px 10px;" ng-include="'img/step-1.svg'" ></div>
                         <div class="row">
                              <div class="col-70">
@@ -115,7 +115,7 @@
                 <div class="row wrapper">
                     <div class="col-100">
 
-                        <h1 wz-next>Dein Ergebnis</h1>
+                        <h1>Dein Ergebnis</h1>
                         <div class="legend">
                             <ul>
                                 <li><div class="color_sq "></div> Deine Schätzung</li>
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row wrapper">
                     <div class="col-25 " ng-if="showresults" ng-repeat="q in questions">
                         <div class="result_info"  >
                             <div class="question-text" ng-style="{'background-color':q.color}">

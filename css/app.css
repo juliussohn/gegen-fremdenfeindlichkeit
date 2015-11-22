@@ -89,6 +89,7 @@ h2 {
   font-size: 20px; }
 
 h3 {
+  color: #1e1e1e;
   font-size: 20px;
   font-weight: 600px; }
 
@@ -958,7 +959,7 @@ Interactive Layer
       transform: scale(1.1); }
     .results .refresh:hover .text {
       opacity: 1;
-      left: 60px; }
+      left: 50px; }
     .results .refresh .circle {
       display: block;
       height: 40px;
@@ -971,10 +972,13 @@ Interactive Layer
       .results .refresh .circle img {
         height: 20px; }
     .results .refresh .text {
+      background-color: #1e1e1e;
+      padding: 5px 15px;
+      border-radius: 4px;
       opacity: 0;
       position: absolute;
       left: 70px;
-      top: 5px;
+      top: 0px;
       transition: all .2s; }
   .results .col-25 {
     padding: 0 5px;
@@ -1028,13 +1032,14 @@ Interactive Layer
     color: #888;
     text-decoration: none; }
   .infoShare .share {
-    padding-top: 20px; }
+    padding-top: 15px; }
     .infoShare .share span {
       padding-right: 20px;
       text-align: right;
       float: left;
       display: blocK; }
     .infoShare .share img {
+      margin-top: 3px;
       float: right; }
 
 .startpage {
@@ -1089,7 +1094,8 @@ Interactive Layer
     font-family: "europa","brandon-grotesque", sans-serif;
     font-weight: 600;
     font-size: 15px;
-    left: 35px; }
+    left: 35px;
+    line-height: 1.5; }
   .startpage .startbutton {
     font-family: "brandon-grotesque", sans-serif;
     cursor: pointer;
