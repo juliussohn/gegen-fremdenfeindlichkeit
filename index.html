@@ -13,7 +13,7 @@
         <script src="js/services.js"></script>
         <script src="https://use.typekit.net/mxq0yba.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        <link rel="stylesheet" href="css/app.css?">
+        <link rel="stylesheet" href="css/app.min.css?">
         <script src="bower_components/Chart.js/Chart.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>flucht.io</title>
@@ -45,7 +45,7 @@
         <wz-step >
         <div  class="startpage">
             <div class="content">
-                <div class="row introsteps">
+                <div class="row wrapper introsteps">
                     <div class="col-50">
                        <h1>flucht.io</h1>
                         <p>Die Flüchtlingssituation in Deutschland und weltweit geht uns alle etwas an. Aber auch wenn sich viele schon engagieren kennen wenige die wirklichen Zahlen und Fakten dahinter. In dieser interaktiven Infografik könnt ihr euer Wissen zu diesem Thema testen.</p>
@@ -62,6 +62,7 @@
                              </div>
                              <div class="col-30" style="padding:0 10px 0 25px; !important;">
                                  <img  src="img/arrow_button.svg" ng-click="nextIntroStep()" ng-class="{'hide':introStep>2}" class="introNext">
+                                 <span ng-click="toStep('q_0')" class="introGo" ng-class="{'hide':introStep<=2}" >LOS</span>
                              </div>
                         </div>
                         
@@ -111,14 +112,22 @@
         <wz-step  wz-title="q_8">
         <div class="results">
             <div class="results_content">
-                <div class="row">
+                <div class="row wrapper">
                     <div class="col-100">
+
                         <h1 wz-next>Dein Ergebnis</h1>
                         <div class="legend">
                             <ul>
                                 <li><div class="color_sq "></div> Deine Schätzung</li>
                                 <li><div class="color_sq blue"></div> Richtiges Ergebnis</li>
                             </ul>
+                        </div>
+                        <div class="infoShare">
+                            Ein Projekt von <a href="https://twitter.com/juliussohn" target="_blank" style="color:#13DFA4">Julius</a> & <a href="https://twitter.com/juliusgehrig"  style="color:#f39c11"target="_blank">Julius</a>
+                            <div class="share">
+                                <span>Teile dieses Projekt mit<br> deinen Freunden</span>
+                                <a target="_blank" href="https://twitter.com/intent/tweet?text=flucht.io%20%E2%80%93%20interaktive%20Infografiken%20zur%20Fl%C3%BCchtlingssituation%20http%3A%2F%2Fflucht.io"><img src="img/twitter.svg"></a>
+                            </div>
                         </div>
                     </div>
                 </div>

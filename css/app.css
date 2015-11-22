@@ -2,10 +2,20 @@ html, body {
   margin: 0;
   padding: 0; }
 
+::selection {
+  background: rgba(255, 255, 255, 0) !important;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  background: rgba(255, 255, 255, 0) !important;
+  /* Gecko Browsers */ }
+
 .row {
   max-width: 1000px;
   margin: 0 auto;
   width: 100%; }
+  .row.wrapper {
+    width: 1000px; }
   .row:after {
     clear: both;
     content: " ";
@@ -80,7 +90,7 @@ h2 {
 
 h3 {
   font-size: 20px;
-  text-transform: uppercase; }
+  font-weight: 600px; }
 
 p {
   font-size: 22px;
@@ -909,14 +919,15 @@ Interactive Layer
     transform: translateY(-50%); }
   .results h1 {
     color: white;
-    text-align: center;
+    text-align: left;
     margin-bottom: 10px; }
   .results h2 {
     margin-top: 0px;
     margin-left: 4px; }
   .results .legend ul {
     list-style: none;
-    text-align: center;
+    text-align: left;
+    text-transform: none;
     padding: 0;
     margin-top: 10px; }
     .results .legend ul li {
@@ -985,8 +996,10 @@ Interactive Layer
       text-align: center;
       text-transform: none; }
     .results .result_info .question-text {
+      text-transform: none;
+      font-size: 20px;
       opacity: 0;
-      transform: scale(0);
+      transform: scale(0.9);
       padding: 20px;
       transition: all 0.4s cubic-bezier(0.17, 0.67, 0.22, 0.9);
       text-align: left;
@@ -998,6 +1011,31 @@ Interactive Layer
       left: 0;
       bottom: 0;
       background-color: white; }
+      .results .result_info .question-text .hyphen {
+        hyphens: auto;
+        -webkit-hyphens: auto; }
+  .results h2 {
+    text-transform: none; }
+
+.infoShare {
+  text-transform: none;
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  max-width: 50%; }
+  .infoShare a {
+    color: #888;
+    text-decoration: none; }
+  .infoShare .share {
+    padding-top: 20px; }
+    .infoShare .share span {
+      padding-right: 20px;
+      text-align: right;
+      float: left;
+      display: blocK; }
+    .infoShare .share img {
+      float: right; }
 
 .startpage {
   background-color: white;
@@ -1029,6 +1067,7 @@ Interactive Layer
       background: #1e1e1e; }
     .startpage h1 + p {
       padding: 0 50px;
+      font-weight: 300;
       line-height: 1.5; }
   .startpage p {
     font-weight: 500px;
@@ -1044,14 +1083,12 @@ Interactive Layer
     margin-top: 10px;
     margin-bottom: 0; }
   .startpage .introsteps small {
-    background: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 10px 13px;
-    color: rgba(0, 0, 0, 0.7);
     position: absolute;
     font-family: "europa","brandon-grotesque", sans-serif;
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 15px;
     left: 35px; }
   .startpage .startbutton {
     font-family: "brandon-grotesque", sans-serif;
@@ -1127,6 +1164,33 @@ Interactive Layer
   transition: all .2s ease-out; }
   .introNext.hide {
     transform: scale(0); }
+
+.introGo {
+  transition: all .2s ease-out;
+  display: inline-block;
+  position: absolute;
+  left: 30px;
+  top: 18px;
+  text-align: center;
+  color: #1e1e1e;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "brandon-grotesque", sans-serif;
+  cursor: pointer; }
+  .introGo.hide {
+    transform: scale(0); }
+    .introGo.hide:after {
+      width: 0%; }
+  .introGo:after {
+    transition: all .2s ease-out;
+    transition-delay: .2s;
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid #1e1e1e; }
 
 .buttonAnimation {
   transition: all .3s ease-out; }
