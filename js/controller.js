@@ -95,7 +95,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
             sourcetitle: "RP Online – September 2015"    
     }, {    
         min: 0,
-            max: 6,
+            max: 12,
             result: 3,
             unit: " Monate",
             question: "Wie lange dürfen Flüchtlinge nach ihrer Ankunft nicht Arbeiten?",
