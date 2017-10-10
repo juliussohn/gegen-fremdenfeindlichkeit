@@ -16,7 +16,10 @@ app.directive('question', function () {
         link: function (scope, element, attr,$rootScope) {
             var el = element,
                 slider = element.find(".slider"),
-                attr = attr;
+                innerAnswer = element.find(".slider"),
+                    attr = attr;
+            console.log(innerAnswer)
+
             $(document)
                 .on('mousemove', mousemove);
             el.on('click', click);

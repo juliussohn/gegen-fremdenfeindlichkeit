@@ -11,7 +11,7 @@
         <script src="bower_components/angular-count-to/build/angular-count-to.min.js"></script>
         <script src="js/controller.js"></script>
         <script src="js/services.js"></script>
-        <script src="https://use.typekit.net/mxq0yba.js"></script>
+        <script src="https://use.typekit.net/imo4gex.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
         <link rel="stylesheet" href="css/app.css?">
         <script src="bower_components/Chart.js/Chart.min.js"></script>
@@ -87,7 +87,7 @@
             <h1 ng-hide="q.showchart">{{q.question}}</h1>
             <span ng-hide="q.showchart" class="value background">{{q.value}}{{q.unit}}</span>
             <div ng-style="{'background-color':q.color, 'height':q.slider_height}" class="slider" ng-class="{clicked: q.clicked}">
-                <h1>{{q.question}}</h1>
+                <h1 ng-style="{'position': 'absolute', 'top' : q.innerAnswerOffset }">{{q.question}}</h1>
                 <div class="bottom-bar">
                     <div class="next-container" ng-class="{'clicked' : q.clicked}">
                         <a  ng-click="toStep('q_'+ ($index+1))" class="next" ><img src="img/next.svg"></a>

@@ -194,6 +194,7 @@ app.controller('appCtrl', function ($scope, $rootScope, WizardHandler, $window) 
         //scope.value = 10 * Math.round((delta * perc + attr.min) / 10);
         question.value = Math.round((delta * perc + question.min));
         question.slider_height = y;
+        question.innerAnswerOffset = -1 * (wh-y )+30 ;
     };
     $scope.bar_options = {
         scaleBeginAtZero: true,
